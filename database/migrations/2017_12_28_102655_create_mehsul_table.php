@@ -18,7 +18,7 @@ class CreateMehsulTable extends Migration
             $table->string('slug',150);
             $table->string('mehsul_adi',150);
             $table->text('aciqlama');
-            $table->decimal('qiymeti',6,3);
+            $table->decimal('qiymeti',10,3);
             $table->timestamp('yaradilma_tarixi')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('guncellenme_tarixi')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE
             CURRENT_TIMESTAMP'));

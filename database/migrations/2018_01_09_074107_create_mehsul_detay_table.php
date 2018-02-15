@@ -19,6 +19,7 @@ class CreateMehsulDetayTable extends Migration
             $table->boolean('goster_slider')->default(0);
             $table->boolean('cox_satilan')->default(0);
             $table->boolean('endirimli')->default(0);
+            $table->string('mehsul_shekli',150);
 
 
             $table->foreign('mehsul_id')->references('id')->on('mehsul')->onDelete('cascade');

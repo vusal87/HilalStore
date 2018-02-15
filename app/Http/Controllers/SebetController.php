@@ -13,12 +13,13 @@ class SebetController extends Controller
 {
  public function index()
  {
+//     dd(cart::content());
      return view('FrontEnd/sebet');
  }
  public function add()
  {
      $mehsul=mehsul::find(request('id'));
-     $cartItem=Cart::add($mehsul->id,$mehsul->mehsul_adi,1,$mehsul->qiymeti,['slug'=>$mehsul->slug]);
+     $cartItem=Cart::add($mehsul->id,$mehsul->mehsul_adi,1,$mehsul->qiymeti,['slug'=>$mehsul->slug,'shekil'=>$mehsul->detay->mehsul_shekli]);
 
 
      if (auth()->check()) {
@@ -69,15 +70,15 @@ class SebetController extends Controller
  }
  public  function guncelle($rowId)
  {
-    //     $validator=Validator::make(request()->all(),[
-    //         'eded'=>'required|numeric|between:1,5'
-    //         ]);
-    //     if ($validator->fails())
-    //     {
-    //         session()->flash('mesaj_tur','danger');
-    //         session()->flash('mesaj','eded deyeri 1 ile 5 arasinda olmaliir');
-    //         return response()->json(['success'=>false]);
-    //     }
+         $validator=Validator::make(request()->all(),[
+             'eded'=>'required|numeric|between:1,5'
+             ]);
+         if ($validator->fails())
+         {
+             session()->flash('mesaj_tur','danger');
+             session()->flash('mesaj','eded deyeri 1 ile 5 arasinda olmaliir');
+             return response()->json(['success'=>false]);
+         }
 
      if (auth()->check())
      {

@@ -20,6 +20,7 @@ class CreateIstifadeciTable extends Migration
             $table->string('shifre',60);
             $table->string('aktivasyon_acari',60)->nullable();
             $table->boolean('aktif_mi')->default(0);
+            $table->boolean('admin_mi')->default(0);
             $table->rememberToken();
 
             $table->timestamp('yaradilma_tarixi')->default(DB::raw('CURRENT_TIMESTAMP'));

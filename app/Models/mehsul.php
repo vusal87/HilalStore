@@ -22,6 +22,6 @@ class mehsul extends Model
             }
             public function detay()
             {
-                return $this->hasOne('App\Models\MehsulDetay');
+                return $this->hasOne('App\Models\MehsulDetay')->withDefault();
             }
 }

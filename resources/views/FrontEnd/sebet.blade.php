@@ -5,14 +5,12 @@
     <div class="breadcrumbs">
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-                <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+                <li><a href="{{route('anasehife')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Ana Sehife</a></li>
                 <li class="active">Checkout Page</li>
             </ol>
         </div>
     </div>
-    <!-- //breadcrumbs -->
-    <!---728x90--->
-    <!-- checkout -->
+
     <div class="checkout">
         <div class="container">
             <h3 class="animated wow slideInLeft" data-wow-delay=".5s">Sebetinizde: <span>{{Cart::count()}} Mehsul var</span></h3>
@@ -21,7 +19,6 @@
                 <table class="timetable_sub">
                     <thead>
                     <tr>
-                        <th >Sira No.</th>
                         <th>Mehsul</th>
                         <th>Miqdari</th>
                         <th >Mehsul Adi</th>
@@ -29,15 +26,27 @@
                         <th>Mehsulu sil</th>
                     </tr>
                     </thead>
+
+                    <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
+                        <a href="{{route('anasehife')}}"><i class="fas fa-chevron-left fa-2x"></i>Aliş verişe davam</a>
+                    </div>
                     @if(count(Cart::content())>0)
                     @foreach(Cart::content() as $mehsulCartItem)
                     <tr class="rem1">
-                        <td class="invert">1</td>
                         <td class="invert-image">
 
-
+        {{--@php--}}
+        {{--dd(\App\Models\mehsul::find($mehsulCartItem->id)->detay->mehsul_shekli);--}}
+        {{--@endphp--}}
                             <a href="{{route('mehsul',$mehsulCartItem->options->slug) }}">
-                                <img src="http://via.placeholder.com/150x150?text=mehsulShekli" alt=" " class="img-responsive" /></a>
+                                <img src="{{$mehsulCartItem->options->shekil!=null ?
+                                             asset('/uploads/mehsullar/'.$mehsulCartItem->options->shekil) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                     alt=""   class="img-responsive" >
+
+
+
+                                {{--<img src="http://via.placeholder.com/150x150?text=mehsulShekli" alt=" " class="img-responsive" />--}}
+                            </a>
                         </td>
                         <td class="invert">
                             <div class="quantity">
@@ -51,7 +60,7 @@
                         
                         <td class="invert">
                             <a href="{{route('mehsul',$mehsulCartItem->options->slug) }}">
-                                {{$mehsulCartItem->name}}
+                               <h3>{{$mehsulCartItem->name}}</h3>
                             </a>
 
                         </td>
@@ -93,7 +102,7 @@
 
                 <div class="checkout-left">
                     <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
-                        <h4>Continue to basket</h4>
+
                         <tr>
                             <th colspan="4" class="text-left">Toplam Mehsul deyeri</th>
                             <th class="text-left">{{Cart::subtotal()}}Azn</th>
@@ -111,13 +120,10 @@
 
                     </div>
 
-                    <a class="btn btn-primary pull-right" href="{{route('odeme')}}">Odeme Et</a>
+                    <a class="btn btn-primary pull-right" href="{{route('odeme')}}">Sifariş et</a>
 
 
 
-                    <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-                        <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
-                    </div>
 
                     <div class="clearfix"> </div>
                 </div>

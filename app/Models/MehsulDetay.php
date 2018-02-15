@@ -9,6 +9,7 @@ class MehsulDetay extends Model
     protected $table = "mehsul_detay";
 
     public $timestamps = false;
+    protected $guarded=[];
 
     public function mehsul()
     {

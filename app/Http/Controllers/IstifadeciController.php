@@ -32,7 +32,12 @@ class IstifadeciController extends Controller
             'email'=>'required|email',
             'shifre'=>'required'
         ]);
-            if (auth()->attempt(['email'=>request('email'),'password'=>request('shifre')]))
+            $credentials =[
+                'email'=>request('email'),
+                'password'=>request('shifre'),
+                'aktif_mi'=>1
+            ];
+            if (auth()->attempt($credentials))
         {
             request()->session()->regenerate();
 

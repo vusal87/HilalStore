@@ -13,7 +13,7 @@ class kateqoriyaController extends Controller
         $alt_kateqoriler=Kateqori::where('ust_id',$kateqori->id)->get();
 
 
-        $mehsullar=$kateqori->mehsullar()->paginate(3);
+        $mehsullar=$kateqori->mehsullar()->paginate(12);
         return view('FrontEnd/kateqoriyalar',compact('kateqori','alt_kateqoriler','mehsullar'));
     }
 }

@@ -19,4 +19,12 @@ class Kateqori extends Model
     {
      return $this->belongsToMany('App\Models\mehsul','kateqoriya_mehsul');
     }
+    public function ust_kateqori()
+    {
+        return $this->belongsTo('App\Models\Kateqori','ust_id')->withDefault([
+
+            'kateqori_adi'=>'Esas Bolme'
+
+        ]);
+    }
 }

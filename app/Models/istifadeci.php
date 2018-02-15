@@ -12,7 +12,7 @@ class istifadeci extends Authenticatable
 
     protected  $table='istifadeci';
 
-    protected $fillable = ['adSoyad', 'email', 'shifre','aktif_mi','aktivasyon_acari'];
+    protected $fillable = ['adSoyad', 'email', 'shifre','aktif_mi','aktivasyon_acari','admin_mi'];
 
     protected $hidden = ['shifre', 'aktivasyon_acari',];
 
@@ -26,7 +26,7 @@ class istifadeci extends Authenticatable
     }
     public  function melumat()
     {
-        return $this->hasOne('App\Models\istifadeci_melumat');
+        return $this->hasOne('App\Models\istifadeci_melumat')->withDefault();
     }
 
 }

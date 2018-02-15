@@ -11,6 +11,54 @@
 |
 */
 
+Route::group(['prefix'=>'admin','namespace'=>'admin'],function(){
+    Route::redirect('','/admin/girish');
+
+    Route::get('/cixish','IstifadeciController@cixish')->name('admin.cixish');
+
+
+    Route::match(['get','post'],'/girish','IstifadeciController@girish')->name('admin.girish');
+
+    Route::group(['middleware'=>'admin'],function (){
+    Route::get('/anasehife','AnasehifeController@index')->name('admin.anasehife');
+
+
+    Route::group(['prefix'=>'istifadeci'],function (){
+
+        Route::match(['get','post'],'/','IstifadeciController@index')->name('admin.istifadeci');
+        Route::get('/yeni','IstifadeciController@form')->name('admin.istifadeci.yeni');
+        Route::get('/duzelt/{id}','IstifadeciController@form')->name('admin.istifadeci.duzelt');
+        Route::post('/yaddaSaxla/{id?}','IstifadeciController@yaddaSaxla')->name('admin.istifadeci.yaddaSaxla');
+        Route::get('/sil/{id}','IstifadeciController@sil')->name('admin.istifadeci.sil');
+
+    });
+
+        Route::group(['prefix'=>'kateqori'],function (){
+
+            Route::match(['get','post'],'/','KateqoriController@index')->name('admin.kateqori');
+            Route::get('/yeni','KateqoriController@form')->name('admin.kateqori.yeni');
+            Route::get('/duzelt/{id}','KateqoriController@form')->name('admin.kateqori.duzelt');
+            Route::post('/yaddaSaxla/{id?}','KateqoriController@yaddaSaxla')->name('admin.kateqori.yaddaSaxla');
+            Route::get('/sil/{id}','KateqoriController@sil')->name('admin.kateqori.sil');
+
+        });
+
+        Route::group(['prefix'=>'mehsul'],function (){
+
+            Route::match(['get','post'],'/','MehsulController@index')->name('admin.mehsul');
+            Route::get('/yeni','MehsulController@form')->name('admin.mehsul.yeni');
+            Route::get('/duzelt/{id}','MehsulController@form')->name('admin.mehsul.duzelt');
+            Route::post('/yaddaSaxla/{id?}','MehsulController@yaddaSaxla')->name('admin.mehsul.yaddaSaxla');
+            Route::get('/sil/{id}','MehsulController@sil')->name('admin.mehsul.sil');
+
+        });
+
+
+
+    });
+});
+
+
 Route::get('/','AnasehifeController@index')->name('anasehife');
 Route::get('/kateqori/{slug_kateqoriadi}','kateqoriyaController@index')->name('kateqori');
 Route::get('/mehsul/{slug_mehsuladi}','MehsulController@index')->name('mehsul');
@@ -33,9 +81,7 @@ Route::get('/odeme','OdemeController@index')->name('odeme');
 Route::post('/odemeEt','OdemeController@odemeEt')->name('odemeEt');
 
 Route::group(['middleware'=>'auth'],function (){
-    Route::get('/sifarishler','SifarishController@index')->name('sifarishler');
-    Route::get('/sifarishler/{id}','SifarishController@detal')->name('sifarish');
-
+    include __DIR__.'/user/user.php';
 });
 
 
