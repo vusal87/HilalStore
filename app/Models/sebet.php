@@ -41,4 +41,13 @@ class sebet extends Model
     {
         return DB::table('sebet_mehsul')->where('sebet_id',$this->id)->sum('eded');
     }
+
+    public function user(){
+        return $this->belongsTo('App\Models\istifadeci', 'istifadeci_id','id');
+    }
+
+
+    public function istifadeci(){
+        return $this->belongsTo('App\Models\istifadeci');
+    }
 }

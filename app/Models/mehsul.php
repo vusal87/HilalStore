@@ -24,4 +24,9 @@ class mehsul extends Model
             {
                 return $this->hasOne('App\Models\MehsulDetay')->withDefault();
             }
+
+            public function photos()
+            {
+                return $this->hasMany('App\Models\Photo','mehsul_id','id');
+            }
 }

@@ -13,7 +13,7 @@ class sifarish extends Model
 
     protected $fillable=[
         'sebet_id','sifarish_deyeri','veziyyet',
-        'bank','adSoyad','adres','ev_telefonu','el_telefonu'
+        'bank','adSoyad','adres','ev_telefon','el_telefon'
     ];
 
     const CREATED_AT = 'yaradilma_tarixi';

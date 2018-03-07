@@ -1,9 +1,10 @@
 @extends('FrontEnd.layout.master')
 @section('title','odeme')
 @section('content')
+
     <div class="container">
         <div class="bg-content">
-            <h2>Siparişler</h2>
+            <h2>Sifarişler</h2>
             @if(count($sifarishler)==0)
                 <p>Heleki sifarisiniz yoxdu</p>
             @else

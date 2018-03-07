@@ -19,7 +19,7 @@ class MehsulController extends Controller
        $axtarilan=request()->input('axtarilan');
        $mehsullar=mehsul::where('mehsul_adi','like',"%$axtarilan%")
            ->orwhere('aciqlama','like',"%$axtarilan%")
-           ->paginate(8);
+           ->paginate(20);
        request()->flash();
        return view('FrontEnd.axtar',compact('mehsullar'));
    }

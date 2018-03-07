@@ -4,6 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>@yield('title',config('app.name'))</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('FrontEnd.layout.Partials.head')
     @yield('head')
 </head>
@@ -16,18 +18,19 @@
 
 <!-- footer -->
 @include('FrontEnd.layout.Partials.footer')
+@include('FrontEnd.layout.Partials.errors')
 @yield('footer')
 <!-- //footer -->
 {{--<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>--}}
 
 {{--<script src="{{asset('frontend/js/bootstrap-3.1.1.min.js')}} "></script>--}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>--}}
 <script src="{{asset('frontend/js/bootstrap.min.js')}} "></script>
 <script src="{{asset('frontend/js/owl.carousel.min.js')}} "></script>
 
-{{--<script src="{{asset('frontend/js/mdb.min.js')}} "></script>--}}
-{{--<script src="{{asset('frontend/js/popper.min.js')}} "></script>--}}
+<script src="{{asset('frontend/js/mdb.min.js')}} "></script>
+<script src="{{asset('frontend/js/popper.min.js')}} "></script>
 
 
 {{--<script src="{{asset('frontend/js/jquery-3.3.1.min.js')}} "></script>--}}
@@ -56,6 +59,10 @@
 <script src="{{asset('frontend/js/app.js')}} "></script>
 
 
+{{--<script src="{{asset('frontend/js/prjs/jquery.min.js')}} "></script>--}}
+<script src="{{asset('frontend/js/prjs/tiksluscarousel.js')}} "></script>
+
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
 </body>
 

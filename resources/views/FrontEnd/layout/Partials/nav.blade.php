@@ -218,7 +218,11 @@
                         <div class="megamenu clearfix">
                         @foreach($kateqoriler as $kateqori)
                             <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
-                                <li > <a  class="categoriHeader" href="{{route('kateqori',$kateqori->slug)}}">{{$kateqori->kateqori_adi}}</a></li>
+                                <li >
+                                    <div class="headerSpan">
+                                        <a  class="categoriHeader" href="{{route('kateqori',$kateqori->slug)}}">{{$kateqori->kateqori_adi}}</a>
+                                    </div>
+                                </li>
                                 @foreach($kateqori->mehsullar as $mehsull)
                                 <li><a href="{{route('mehsul',$mehsull->slug)}}">{{$mehsull->mehsul_adi}}<i class="fas fa-chevron-right"></i></a></li>
                                 @endforeach
@@ -228,56 +232,54 @@
                         </div>
                     </li>
                     <li><a class="coxSatilanlar" href="#coxSatilanlar">Ən Çox Satilanlar</a>
-
                     </li>
-
-                    <li><a class="enirimdeOlanlar" href="#enirimdeOlanlar">Endirimde olanlar </a>
+                    <li><a class="enirimdeOlanlar" data-href="#enirimdeOlanlar" href="{{route('anasehife')}}#enirimdeOlanlar">Endirimde olanlar </a>
                     </li>
                     <li><a class="elaqe" href="#elaqe"> ELAQE </a>
                     </li>
-
-
                     @guest
-                    <li><a href="#"><i class="fa fa-sign-in"></i>Giriş <span class="arrow"></span></a>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-sign-in"></i>Giriş
+                            <span class="arrow"></span>
+                        </a>
                         <div class="megamenu halfdiv03">
-                            <h3 class="title">Giriş</h3>
+                            <h3 class="text-center">Giriş</h3>
 
                             <form class="menu_form" method="post" action="{{route('istifadeci.qeydiyyatAc')}}">
                                 {{csrf_field()}}
-                                <input class="form-control" type="email" placeholder="Email Address" name="email" id="email" required=" " >
+                                <input class="form-control" type="email" placeholder="Email" name="email" id="email" required=" " >
 
-                                <input class="form-control" name="shifre" id="shifre" type="password" placeholder="Password" required=" " >
+                                <input class="form-control" name="shifre" id="shifre" type="password" placeholder="Şifre" required=" " >
 
-                                <div class="forgot">
-                                    <a href="#">Parolu unutdun?</a>
-                                </div>
+                                {{--<div class="forgot">--}}
+                                    {{--<a href="#">Parolu unutdun?</a>--}}
+                                {{--</div>--}}
                                 <input type="submit" value="Daxil ol">
                             </form>
                         </div>
                     </li>
-                    <li><a href="#"><i class="fa fa-sign-in"></i>Qiydiyyat <span class="arrow"></span></a>
+                    <li><a href="#">
+                            <i class="fa fa-sign-in"></i>
+                            Qiydiyyat <span class="arrow"></span>
+                        </a>
                         <div class="megamenu halfdiv03">
-                            <h3 class="title">Qeydiyyat</h3>
+                            <h3 class="text-center">Qeydiyyat</h3>
 
-                            <form class="animated wow slideInUp" data-wow-delay=".5s" action="{{route('istifadeci.qeydiyyatOl')}}" method="POST">
+                            <form class="animated wow slideInUp menu_form" data-wow-delay=".5s" action="{{route('istifadeci.qeydiyyatOl')}}" method="POST">
                                 {{csrf_field()}}
-                                <input id="adSoyad" name="adSoyad" type="text" placeholder="Ad Soyad" required=" " >
-                                @if($errors->has('email'))
+                                <input class="form-control" id="adSoyad" name="adSoyad" type="text" placeholder="Ad Soyad" required=" " >
+                                @if(isset($errors)&&$errors->has('email'))
                                     <strong>{{$errors->first('email')}}</strong>
                                 @endif
 
-                                <input id="email" type="email" name="email"  placeholder="Email Address" required=" " >
+                                <input class="form-control" id="email" type="email" name="email"  placeholder="Email Address" required=" " >
 
-                                <input type="password" id="shifre" name="shifre" placeholder="Shifre" required=" " >
+                                <input class="form-control" type="password" id="shifre" name="shifre" placeholder="Şhifre" required=" " >
 
-                                <input id="shifre-tekrari" name="shifre_confirmation" type="password" placeholder="Password Confirmation" required=" " >
+                                <input class="form-control" id="shifre-tekrari" name="shifre_confirmation" type="password" placeholder="Şhifre tekrari" required=" " >
 
-                                <div class="register-check-box">
-                                    <div class="check">
-                                        <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label>
-                                    </div>
-                                </div>
-                                <input type="submit" value="Register">
+                                <input type="submit" value="Qeydiyyat">
                             </form>
                         </div>
                     </li>
@@ -324,6 +326,21 @@
 
 
 </div>
+<div class="loader">
+		<span class="circle">LOA
+		<div class="scircle"></div>
+		<div class="scircle"></div>
+		</span>
+    <span class="circle">D
+		<div class="scircle"></div>
+		<div class="scircle"></div>
+		</span>
+    <span class="circle">ING
+		<div class="scircle"></div>
+		<div class="scircle"></div>
+		</span>
+</div>
+
 </body>
 
 </html>

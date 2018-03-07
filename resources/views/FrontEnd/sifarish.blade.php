@@ -20,7 +20,9 @@
 
                     <td style="width: 120px">
                         <a href="{{route('mehsul',$sebet_mehsul->mehsul->slug)}}">
-                           <img src="http://via.placeholder.com/120x100?text=mehsulShekli" alt=" " class="img-responsive" />
+                            <img src="{{($sebet_mehsul->photos) && $sebet_mehsul->photos[0]->img_name !=null ?
+                                             asset('/uploads/mehsullar/'.$sebet_mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                 alt="" style="min-height:120px;max-height: 100px"  class="img-responsive" >
                          </a>
                     </td>
                     <td>

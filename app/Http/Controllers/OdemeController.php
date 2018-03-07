@@ -25,6 +25,9 @@ class OdemeController extends Controller
         }
 
         $istifadeci_melumat=auth()->user()->melumat;
+        if(Cart::total()<100){
+            return back()->with('error','kasibsiniz');
+        };
 
         return view('FrontEnd/odeme',compact('istifadeci_melumat'));
     }
@@ -35,7 +38,6 @@ class OdemeController extends Controller
         $sifarish['bank']='azerbank';
         $sifarish['veziyyet']="sifarishiniz alindi";
         $sifarish['sifarish_deyeri']=Cart::subtotal();
-
         sifarish::create($sifarish);
         Cart::destroy();
         session()->forget('aktiv_sebet_id');

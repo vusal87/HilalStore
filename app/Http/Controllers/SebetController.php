@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SebetMehsul;
 use App\Models\sebet;
-use Dotenv\Validator;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\mehsul;
 use Cart;
@@ -19,8 +19,7 @@ class SebetController extends Controller
  public function add()
  {
      $mehsul=mehsul::find(request('id'));
-     $cartItem=Cart::add($mehsul->id,$mehsul->mehsul_adi,1,$mehsul->qiymeti,['slug'=>$mehsul->slug,'shekil'=>$mehsul->detay->mehsul_shekli]);
-
+     $cartItem=Cart::add($mehsul->id,$mehsul->mehsul_adi,1,$mehsul->qiymeti,['slug'=>$mehsul->slug,'shekil'=>$mehsul->photos]);
 
      if (auth()->check()) {
          $aktiv_sebet_id=session('aktiv_sebet_id');
@@ -32,11 +31,10 @@ class SebetController extends Controller
              $aktiv_sebet_id = $aktiv_sebet->id;
              session()->put('aktiv_sebet_id', $aktiv_sebet_id);
          }
-
-         SebetMehsul::updateOrCreate(
-             ['sebet_id'=>$aktiv_sebet_id,'mehsul_id'=>$mehsul->id],
-             ['eded'=>$cartItem->qty,'qiymeti'=>$mehsul->qiymeti,'veziyyet'=>'Gozlemede']
-         );
+        SebetMehsul::updateOrCreate(
+            ['sebet_id'=>$aktiv_sebet_id,'mehsul_id'=>$mehsul->id],
+            ['eded'=>$cartItem->qty,'qiymeti'=>$mehsul->qiymeti,'veziyyet'=>'Gozlemede']
+        );
 
      }
 

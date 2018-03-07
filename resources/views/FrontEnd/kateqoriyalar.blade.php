@@ -12,30 +12,30 @@
     <!---728x90--->
     <div class="products">
         <div class="container">
-            <div class="col-md-4 products-left">
+            {{--<div class="col-md-4 products-left">--}}
 
-                <div class="categories animated wow slideInUp" data-wow-delay=".5s">
-                    <h3>{{$kateqori->kateqori_adi}}</h3>
-                    <ul class="cate">
-                        @foreach($alt_kateqoriler as $alt_kateqori)
+                {{--<div class="categories animated wow slideInUp" data-wow-delay=".5s">--}}
+                    {{--<h3>{{$kateqori->kateqori_adi}}</h3>--}}
+                    {{--<ul class="cate">--}}
+                        {{--@foreach($alt_kateqoriler as $alt_kateqori)--}}
 
-                        <li><a href="{{route('kateqori',$alt_kateqori->slug)}}">{{$alt_kateqori->kateqori_adi}}</a> <span>(15)</span></li>
-                        @endforeach
-                        </ul>
+                        {{--<li><a href="{{route('kateqori',$alt_kateqori->slug)}}">{{$alt_kateqori->kateqori_adi}}</a> <span>(15)</span></li>--}}
+                        {{--@endforeach--}}
+                        {{--</ul>--}}
 
-                    </ul>
-                </div>
+                    {{--</ul>--}}
+                {{--</div>--}}
 
 
-            </div>
-            <div class="col-md-8 products-right">
+            {{--</div>--}}
+            <div class="col-md-12 products-right">
                 @if(count($mehsullar)==0)
                     <div class="col-md-12">Bu kateqoriyaad heleki mehsul yoxdur</div>
                 @endif
                 @foreach($mehsullar as $mehsul)
 
                     <div class="products-right-grids-bottom">
-                        <div class="col-md-4 products-right-grids-bottom-grid">
+                        <div class="col-md-3 products-right-grids-bottom-grid">
                             <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
 
                                 <div class="new-collections-grid1-image">
@@ -46,16 +46,24 @@
                                     </a>
                                 </div>
 
-                                <h4><a href="{{route('mehsul',$mehsul->slug) }}">{{$mehsul->mehsul_adi}}</a></h4>
+                                <div class="new-collections-grid1-left ">
+                                    <a href="">
+                                        <h4 class="text-left itemName">{{$mehsul->mehsul_adi}}</h4>
+                                    </a>
 
-                                <div class="simpleCart_shelfItem products-right-grid1-add-cart">
-                                   <span class="item_price">{{$mehsul->qiymeti}}Azn</span>
+                                    <h4 class="text-left itemPrice">{{$mehsul->qiymeti}}
+                                    </h4>
+                                    <form action="{{route('sebet.add')}}" method="post">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="id" value="{{$mehsul->id}}" >
+                                        <span class="sebetSpan">
+                                            <i class="fa fa-shopping-cart" ></i>
+                                            <button class="shopingCart hover">Sebete at</button>
+                                            {{--<input type="submit"  value="">--}}
+                                        </span>
+                                    </form>
+
                                 </div>
-                                <span class="sebetSpan">
-                                    <i class="fa fa-shopping-cart" ></i>
-                                    <input type="submit" class="btn btn-theme item_add" value="Sebete at">
-                                </span>
-
                             </div>
 
                         </div>

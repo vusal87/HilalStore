@@ -35,12 +35,14 @@
             <tbody>
             @foreach($list as  $entry)
 
-
             <tr>
                 <td>{{$entry->id}}</td>
                 <td>
-                    <img src="{{$entry->detay->mehsul_shekli!=null ?
-                                             asset('/uploads/mehsullar/'.$entry->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                    {{--<img src="{{$entry->detay->mehsul_shekli!=null ?--}}
+                                             {{--asset('/uploads/mehsullar/'.$entry->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"--}}
+                         {{--alt=""  class="img-responsive" >--}}
+                    <img src="{{count($entry->photos) && $entry->photos[0]->img_name !=null ?
+                                             asset('/uploads/mehsullar/'.$entry->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
                          alt="" style="max-width:80px;height: 80px" class="img-responsive" >
 
                 </td>

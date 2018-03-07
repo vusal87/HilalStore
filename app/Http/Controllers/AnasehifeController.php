@@ -6,6 +6,7 @@ use App\Models\Kateqori;
 use App\Models\MehsulDetay;
 use Illuminate\Http\Request;
 use App\Models\mehsul;
+use App\Models\Photo;
 
 class AnasehifeController extends Controller
 {

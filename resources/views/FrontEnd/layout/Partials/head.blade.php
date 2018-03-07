@@ -1,7 +1,6 @@
 <meta name="keywords" content="Best Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
           Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <link href="{{asset('frontend/css/bootstrap.css')}} "rel="stylesheet" type="text/css" media="all" />
 
@@ -23,7 +22,7 @@
 {{--<link href="{{asset('frontend/css/style.css')}} "rel="stylesheet" type="text/css" media="all" />--}}
 {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
 
-
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
 
@@ -60,6 +59,7 @@
 
 <link href="{{asset('frontend/css/webslidemenu.css')}} "rel="stylesheet" type="text/css" media="all" />
 
+<link href="{{asset('frontend/css/productPage/tiksluscarousel.css')}} "rel="stylesheet" type="text/css" media="all" />
 
 
 

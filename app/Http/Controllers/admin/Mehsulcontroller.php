@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Kateqori;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\mehsul;
@@ -78,26 +79,32 @@ class Mehsulcontroller extends Controller
         if (request()->hasFile('mehsul_shekli'))
         {
             $this->validate(request(),[
-               'mehsul_shekli'=>'image|mimes:jpg,png,jpeg,gif|max:2048'
+               'mehsul_shekli.*'=>'image|mimes:jpg,png,jpeg,gif|max:2048'
             ]);
             $mehsul_shekli=request()->file('mehsul_shekli');
             $mehsul_shekli=request()->mehsul_shekli;
+//            dd($mehsul_shekli);
+            foreach ($mehsul_shekli as $shekil) {
+                $fayladi=$entry->id . "-" . round(microtime(true) * 1000) . "." . $shekil->extension();
+                $shekil->move('uploads/mehsullar',$fayladi);
+                Photo::create(['mehsul_id' => $entry->id,'img_name' => $fayladi]);
+            }
             //$mehsul_shekli->extension();
             //$mehsul_shekli->getClientOriginalName();
             //$mehsul_shekli->hashName();
 
-                $fayladi=$entry->id . "-" . time() . "." . $mehsul_shekli->extension();
+//                $fayladi=$entry->id . "-" . time() . "." . $mehsul_shekli->extension();
                // $fayladi=$mehsul_shekli->getClientOriginalName();
                // $fayladi=$mehsul_shekli->hashName();
 
-                if ($mehsul_shekli->isValid())
-                {
-                 $mehsul_shekli->move('uploads/mehsullar',$fayladi);
-                 MehsulDetay::updateOrCreate(
-                     ['mehsul_id'=>$entry->id],
-                     ['mehsul_shekli'=>$fayladi]
-                 );
-                }
+//                if ($mehsul_shekli->isValid())
+//                {
+//                 $mehsul_shekli->move('uploads/mehsullar',$fayladi);
+//                 MehsulDetay::updateOrCreate(
+//                     ['mehsul_id'=>$entry->id],
+//                     ['mehsul_shekli'=>$fayladi]
+//                 );
+//                }
         }
 
         return redirect()

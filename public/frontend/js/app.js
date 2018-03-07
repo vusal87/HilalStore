@@ -47,6 +47,7 @@ $('.owl-carousel').owlCarousel({
 
 
 $(document).ready(function(){
+    $(".loader").fadeOut();
     $(".wsmenu").sticky({
         className:'wsmans',
         zIndex:9999
@@ -59,16 +60,21 @@ $(document).ready(function () {
       var headerhight=$('.header').outerHeight();
 
 
-       $('.coxSatilanlar,.enirimdeOlanlar,.elaqe').click(function (e) {
-            var linkhref=$(this).attr('href');
-            $('html,body').animate({
+    $('.coxSatilanlar,.enirimdeOlanlar,.elaqe').click(function (e) {
+        var linkhref=$(this).attr('data-href');
+
+        console.log($(linkhref));
+        $('html,body').animate({
                 scrollTop:$(linkhref).offset().top -headerhight
                    },1000)  ;
-                   e.preventDefault();
-                         });
+        e.preventDefault();
+    });
 
 
 });
+
+
+
 $(document).ready(function() {
     $(".gry, .blue, .green, .red, .orange, .yellow, .purple, .pink, .whitebg, .tranbg").on("click", function() {
         $(".wsmain")
@@ -85,18 +91,48 @@ $(document).ready(function() {
 
 var Jquery = $;
 
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
 $('.mehsul-azalt, .mehsul-artir').click(function () {
 
    var id = $(this).attr('data-id');
    var eded = $(this).attr('data-eded');
     Jquery.ajax({
-        type:'PATCH',
+        type:'POST',
         url:'/sebet/guncelle/' +id,
         data:{eded:eded},
         success:function (data) {
-             window.location.href='/sebet';
-        document.getElementById(id).innerHTML=data.eded;
-            $(_this).attr('data-eded', parseInt(eded) + 1 )
+             // window.location.href='/sebet';
+            var elem = document.getElementById(id);
+            elem.innerHTML=data.eded;
+            elem.parentNode.previousElementSibling.setAttribute('data-eded', Number(data.eded - 1))
+            elem.parentNode.nextElementSibling.setAttribute('data-eded', Number(data.eded) + 1)
         }
     });
+});
+
+$('.wsmenu-list li').click(function (e) {
+    if(e.target.hasAttribute('href')) {
+        var has = e.target.parentNode.classList.contains('hover');
+        $('.wsmenu-list li').removeClass('hover');
+        if (!has)
+            e.target.parentNode.classList.add('hover');
+    }
+});
+
+$(document).click(function (e) {
+    var a = 3;
+    e = e.target;
+    while(e.parentNode && e.parentNode.classList && !e.parentNode.classList.contains('hover') && a > 0){
+        e = e.parentNode;
+        a -= 1;
+    }
+    if(a === 0) {
+        $('.wsmenu-list li').removeClass('hover')
+
+   }
 });

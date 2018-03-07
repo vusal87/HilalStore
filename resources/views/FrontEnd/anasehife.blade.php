@@ -14,9 +14,9 @@
                     <div class="owl-carousel owl-theme ">
                         @foreach($mehsullar_slider as $index=>$mehsul)
                             <div class=" item slide zoomInLeft {{$index==0 ? 'active' : ''}}">
-                                <img src="{{$mehsul->detay->mehsul_shekli!=null ?
-                                         asset('/uploads/mehsullar/'.$mehsul->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
-                                           alt=""  class="img-responsive animated zoomInRight"  >
+                                <img src="{{count($mehsul->photos) && $mehsul->photos[0]->img_name !=null ?
+                                             asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                     alt=""   class="img-responsive" >
                                     <div class="item-caption">
                                         <h4 class="mehsul_adi">
                                             {{$mehsul->mehsul_adi}}
@@ -39,14 +39,15 @@
         </div>
     <div  id="coxSatilanlar" >
         <div class="container">
-            <!---728x90--->
-            <h3 class="animated wow zoomIn coxSatilanlar text-center" data-wow-delay=".5s">Çox Satilanlar</h3>
+                <div class="headerBashlig">
+                    <h3 class="animated wow zoomIn coxSatilanlar text-center" data-wow-delay=".5s">Çox Satilanlar</h3>
+                </div>
             <hr>
             <div class="new-collections-grids">
                         <div class="row">
                             @foreach( $mehsullar_cox_satan as $mehsul)
 
-                                <div class="col-md-3 new-collections-grid ">
+                                <div class="col-md-3 col-sm-6 col-xs-12 new-collections-grid ">
                                     <div class="overlay">
                                         <div class="borderTop"></div>
                                         <div class="borderRight"></div>
@@ -56,16 +57,16 @@
                                     </div>
                                     <div class="new-collections-grid1 item-contents" data-wow-delay=".5s">
                                         <a href="{{route('mehsul',$mehsul->slug)}}" class="new-collections-grid1-image">
-                                            <img class="img-responsive" src="{{$mehsul->detay->mehsul_shekli!=null ?
-                                             asset('/uploads/mehsullar/'.$mehsul->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
-                                                 alt="" style="min-height: 250px;max-height: 250px"  >
+                                            <img src="{{count($mehsul->photos) && $mehsul->photos[0]->img_name !=null ?
+                                             asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                                 alt="" style="min-height: 250px;max-height: 250px"  class="img-responsive" >
                                         </a>
                                         {{--<p> <a href="{{route('mehsul',$mehsul->slug)}}"></a></p>--}}
                                         <div class="new-collections-grid1-left ">
                                             <a href="">
                                                 <h4 class="text-left itemName">{{$mehsul->mehsul_adi}}</h4>
                                             </a>
-                                                <h4 class="text-left itemPrice">{{$mehsul->qiymeti}}
+                                                <h4 class="text-left itemPrice">{{$mehsul->qiymeti}}Azn
                                                 </h4>
                                                 <form action="{{route('sebet.add')}}" method="post">
                                                     {{csrf_field()}}
@@ -93,11 +94,11 @@
                 <div class="row">
                     @foreach( $mehsullar_endirimli as $mehsul)
 
-                        <div class="col-md-3 new-collections-grid">
+                        <div class="col-md-3 col-sm-6 col-xs-12 new-collections-grid">
                             <div class="new-collections-grid1 animated wow slideInUp" data-wow-delay=".5s">
                                 <a href="{{route('mehsul',$mehsul->slug)}}" class="new-collections-grid1-image">
-                                    <img src="{{$mehsul->detay->mehsul_shekli!=null ?
-                                             asset('/uploads/mehsullar/'.$mehsul->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                    <img src="{{count($mehsul->photos) && $mehsul->photos[0]->img_name !=null ?
+                                             asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
                                          alt="" style="min-height: 250px;max-height: 250px"  class="img-responsive" >
 
                                 </a>
@@ -106,7 +107,7 @@
                                         <h4 class="text-left itemName">{{$mehsul->mehsul_adi}}</h4>
                                     </a>
 
-                                    <h4 class="text-left itemPrice">{{$mehsul->qiymeti}}
+                                    <h4 class="text-left itemPrice">{{$mehsul->qiymeti}}Azn
                                     </h4>
                                     <form action="{{route('sebet.add')}}" method="post">
                                         {{csrf_field()}}
@@ -130,10 +131,15 @@
         <div id="elaqe">
             <h2 class="text-center">Bizimle Elaqe</h2>
             <hr>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8855.34254082143!2d49.77733412062443!3d40.32664723407502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307f1adf8c1cd3%3A0x3a773a101ecbc724!2z0KLQvtGA0LPQvtCy0YvQuSDQptC10L3RgtGAINCh0LDQtNCw0YDQsNC6!5e0!3m2!1sru!2s!4v1517939206925" width="600" height="450" frameborder="0" style="border:0;width: 100%;margin-top: 40px" allowfullscreen></iframe>
-        </div>
-        </div>
+            <div id="map_view">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8855.34254082143!2d49.77733412062443!3d40.32664723407502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307f1adf8c1cd3%3A0x3a773a101ecbc724!2z0KLQvtGA0LPQvtCy0YvQuSDQptC10L3RgtGAINCh0LDQtNCw0YDQsNC6!5e0!3m2!1sru!2s!4v1517939206925" width="600" height="450" frameborder="0" style="border:0;width: 100%;margin-top: 40px" allowfullscreen></iframe>
 
+            </div>
+        </div>
+        </div>
 
 
 @endsection
+
+
+

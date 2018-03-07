@@ -15,14 +15,14 @@
                                     <div class="col-md-12 col-sm-12">
                                         <div class="form-group">
                                             <label>Ad Soyad<span class="required"></span></label>
-                                            <input type="text" name="firstname" class="form-control" value="{{auth()->user()->adSoyad}}">
+                                            <input type="text" name="adSoyad" class="form-control" value="{{auth()->user()->adSoyad}}">
                                         </div> <!-- /.form-group -->
                                     </div> <!-- /.col-md-6 -->
 
                                 </div> <!-- /.row -->
                                 <div class="form-group">
                                     <label>Ünvan<span class="required"></span></label>
-                                    <input type="text" name="address-title" class="form-control" value="{{$istifadeci_melumat->adres}}">
+                                    <input type="text" name="adres" class="form-control" value="{{$istifadeci_melumat->adres}}">
                                 </div> <!-- /.form-group -->
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6">
@@ -50,13 +50,13 @@
                                     <div class="col-md-6 col-sm-6">
                                         <div class="form-group">
                                             <label>Tlefon Nomre<span class="required"></span></label>
-                                            <input type="text" name="phone" class="form-control phone" value="{{$istifadeci_melumat->ev_telefonu}}">
+                                            <input type="text" name="ev_telefon" class="form-control phone" value="{{$istifadeci_melumat->ev_telefon}}">
                                         </div> <!-- /.form-group -->
                                     </div> <!-- /.col-md-6 -->
                                     <div class="col-md-6 col-sm-6">
                                         <div class="form-group">
                                             <label>Mobil Nomre<span class="required"></span></label>
-                                            <input type="text" name="phone" class="form-control phone" value="{{$istifadeci_melumat->el_telefonu}}">
+                                            <input type="text" name="el_telefon" class="form-control phone" value="{{$istifadeci_melumat->el_telefon}}">
                                         </div> <!-- /.form-group -->
                                     </div> <!-- /.col-md-6 -->
                                 </div> <!-- /.row -->

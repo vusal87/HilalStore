@@ -23,7 +23,7 @@
         <span class="fa fa-fw fa-dashboard"></span> Istifadeciler
         <span class="badge badge-dark badge-pill pull-right">14</span>
     </a>
-    <a href="#" class="list-group-item">
+    <a href="{{route('admin.sifaris')}}" class="list-group-item">
         <span class="fa fa-fw fa-dashboard"></span> Sifarishler
         <span class="badge badge-dark badge-pill pull-right">14</span>
     </a>

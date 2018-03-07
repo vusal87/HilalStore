@@ -77,13 +77,13 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group images-groups">
             @if($entry->detay->mehsul_shekli!= null)
                 <img src="/uploads/mehsullar/{{$entry->detay->mehsul_shekli}}" alt="" style="height: 100px; width: 100px">
                 @endif
             {{csrf_field()}}
             <label for="mehsul_shekli">Mehsul_shekli</label>
-            <input type="file" id="mehsul_shekli" name="mehsul_shekli">
+            <input type="file" id="mehsul_shekli" name="mehsul_shekli[]" multiple>
         </div>
 
 

@@ -13,6 +13,6 @@ class MehsulDetay extends Model
 
     public function mehsul()
     {
-        return $this->belongsTo('App\Models\mehsul');
+        return $this->belongsTo('App\Models\mehsul','mehsul_id', 'id');
     }
 }

@@ -4,7 +4,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>AnaSehife</a></li>
+                <li><a href="#"><span  aria-hidden="true"></span><i class="fas fa-home"></i>AnaSehife</a></li>
                @foreach($kateqoriler as $kateqori)
 
                    <li><a href="#">{{$kateqori->kateqori_adi}}</a></li>
@@ -13,308 +13,121 @@
             </ol>
         </div>
     </div>
+    <section class="main-container col1-layout">
+        <div class="main" id="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="codepen-container">
+                        <div class="content-container">
+                            <div class="row">
+                                <form action="{{route('sebet.add')}}" method="post" id="product">
+                                    {{csrf_field()}}
 
+                                    <div class="left-container col-md-5 col-sm-5 col-md-offset-1 col-xs-12">
 
+                                        <div class="triangle-topleft">
+                                            <div class="back-arrow" id="buy-toaster"></div>
+                                        </div>
+                                        <div class="product-image--container">
+                                            <div class="imgParent">
+                                                <img class="img-responsive product-image--featured " id="featured" src="{{$mehsul->photos[0]->img_name!=null ?
+                                         asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                                     alt=""  >
+                                            </div>
 
-    <!DOCTYPE html>
+                                            <ul class="product-image--list">
+                                                @foreach( $mehsul->photos as $image )
+                                                    <li>
+                                                        <img class="img-responsive item-selected product-image--item " src="{{$image->img_name!=null ?
+                                 asset('/uploads/mehsullar/'.$image->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}" alt="">
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
 
-        <!-- Template styles -->
-        <style rel="stylesheet">
-            /* TEMPLATE STYLES */
+                                    </div>
 
-            main {
-                padding-top: 3rem;
-                padding-bottom: 2rem;
-            }
+                                    <div class="right-container col-md-6 col-sm-6 col-xs-12">
+                                        <div class="rightCon">
+                                            <div>
+                                                <h1 class="text-left">{{$mehsul->mehsul_adi}}</h1>
+                                            </div>
+                                            <div class="price-block">
+                                                <div class="price-box text-left">
+                                                    <h3 class="text-left">Qiymet</h3>
+                                                    <p>{{$mehsul->qiymeti}}</p>
+                                                </div>
+                                            </div>
 
-            .reviews {
-                text-align: center;
-                border-top: 1px solid #e0e0e0;
-                border-bottom: 1px solid #e0e0e0;
-                padding: 1rem;
-                margin-top: 1rem;
-                margin-bottom: 2rem;
-            }
+                                            <div class="info-orther text-left">
+                                                <p>Mehsul: Yeni</p>
+                                            </div>
 
-            .navbar {
-                background-color: #414a5c;
-            }
+                                            <div class="short-description">
+                                                <h2 class="text-left">Qisa Melumat</h2>
+                                                <p class="text-left">{{$mehsul->aciqlama}}</p>
+                                            </div>
+                                            <div>
+                                                <div class="form-option">
+                                                    <div class="add-to-box">
+                                                        <form action="{{route('sebet.add')}}" method="post" id="product">
+                                                            {{csrf_field()}}
+                                                            <div class="add-to-cart">
 
-            footer.page-footer {
-                background-color: #414a5c;
-                margin-top: 2rem;
-            }
+                                                                <input type="hidden" name="id" value="{{$mehsul->id}}" >
 
-            .card {
-                font-weight: 300;
-            }
+                                                                <span class="sebetSpan">
+                                                                <i class="fa fa-shopping-cart" ></i>
+                                                                <button class="shopingCart hover">Sebete at</button>
+                                                            </span>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-            .navbar .btn-group .dropdown-menu a:hover {
-                color: #000 !important;
-            }
-
-            .navbar .btn-group .dropdown-menu a:active {
-                color: #fff !important;
-            }
-        </style>
-
-
-
-
-
-    <main>
-
-
-        <div class="container">
-            <div class="row mt-lg-5">
-
-
-                <div class="col-lg-7 wow fadeIn" data-wow-delay="0.2s">
-
-
-                    <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-                        </ol>
-
-                        <div class="carousel-inner" role="listbox">
-
-                            <div class="carousel-item active">
-                                {{--@foreach($mehsullar as $mehsul)--}}
-                                <img src="{{$mehsul->detay->mehsul_shekli!=null ?
-                                         asset('/uploads/mehsullar/'.$mehsul->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
-                                     alt=""  class="img-responsive " style="min-width:400px;min-height: 400px;max-height: 400px"  >
-                            {{--@endforeach--}}
+                                    </div>
+                                </form>
                             </div>
 
                         </div>
-
-                        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-
                     </div>
 
-
-                </div>
-
-                <div class="col-lg-5">
-
-
-                    <div class="row wow fadeIn" data-wow-delay="0.4s">
-                        <div class="col-md-12">
-
-                            <div class="product-wrapper">
-
-                                <!--Product data-->
-                                <h2 class="h2-responsive mt-4 font-bold">{{$mehsul->mehsul_adi}}</h2>
-                                <hr>
-                                <h3>Qiymeti</h3>
-
-                                <div class="new-collections-grid1-left ">
-                                    <p class="price animated tada text-left">{{$mehsul->qiymeti}}
-                                    <form action="{{route('sebet.add')}}" method="post">
-                                        {{csrf_field()}}
-
-                                        <dl class="row mt-4">
-
-                                            <dt class="col-sm-3">Etrafli</dt>
-                                            <dd class="col-sm-9">{{$mehsul->aciqlama}}</dd>
-
-                                        </dl>
-
-                                        <hr>
-                                                <input type="hidden" name="id" value="{{$mehsul->id}}" >
-
-
-                                        <i class="fa fa-shopping-cart" ></i>
-                                        <input type="submit" class="btn btn-theme item_add animated bounceInUp" value="Sebete at">
-
-
-
-                                    </form>
-
-
+                    <div class="product-collateral col-lg-12 col-sm-12 col-xs-12">
+                        <div class="add_info">
+                            <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+                                <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Mehsul haqqinda melumat </a> </li>
+                            </ul>
+                            <div id="productTabContent" class="tab-content">
+                                <div class="tab-pane fade in active" id="product_tabs_description">
+                                    <div class="std">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla. Donec a neque libero. Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam erat mi, rutrum at sollicitudin rhoncus, ultricies posuere erat. Duis convallis, arcu nec aliquam consequat, purus felis vehicula felis, a dapibus enim lorem nec augue.</p>
+                                        <p> Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue. Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer enim purus, posuere at ultricies eu, placerat a felis. Suspendisse aliquet urna pretium eros convallis interdum. Quisque in arcu id dui vulputate mollis eget non arcu. Aenean et nulla purus. Mauris vel tellus non nunc mattis lobortis.</p>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="product_tabs_tags">
+                                    <div class="box-collateral box-tags">
+                                        <div class="tags">
+                                            <form id="addTagForm" action="#" method="get">
+                                                <div class="form-add-tags">
+                                                    <label for="productTagName">Add Tags:</label>
+                                                    <div class="input-box">
+                                                        <input class="input-text" name="productTagName" id="productTagName" type="text">
+                                                        <button type="button" title="Add Tags" class=" button btn-add" onClick="submitTagForm()"> <span>Add Tags</span> </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <p class="note">Use spaces to separate tags. Use single quotes (') for phrases.</p>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
                 </div>
-
-
             </div>
-        </div>
 
-
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {{--<div class="single">--}}
-        {{--<div class="container">--}}
-            {{--<div class="col-md-4 products-left">--}}
-
-
-            {{--</div>--}}
-            {{--<div class="col-md-8 single-right">--}}
-                {{--<div class="col-md-12">--}}
-                    {{--<a href="single.html"><img src="http://via.placeholder.com/600x200?text=mehsulShekli" alt=" " class="img-responsive" /></a>--}}
-
-                {{--</div>--}}
-                {{--<div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">--}}
-                    {{--<div class="flexslider">--}}
-                        {{--<ul class="slides">--}}
-                            {{--<li data-thumb="images/si.jpg">--}}
-                                {{--<div class="thumb-image"> <img src="http://via.placeholder.com/400x200?text=mehsulShekli" data-imagezoom="true" class="img-responsive"> </div>--}}
-                            {{--</li>--}}
-                            {{--<li data-thumb="images/si1.jpg">--}}
-                                {{--<div class="thumb-image"> <img src="http://via.placeholder.com/400x200?text=mehsulShekli" data-imagezoom="true" class="img-responsive"> </div>--}}
-
-                            {{--</li>--}}
-
-                        {{--</ul>--}}
-                    {{--</div>--}}
-
-                {{--</div>--}}
-                {{--<div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">--}}
-                    {{--<h3>{{$mehsul->mehsul_adi}}</h3>--}}
-                    {{--<h4><span class="item_price"></span>{{$mehsul->qiymeti}}Azn</h4>--}}
-
-                    {{--<div class="description">--}}
-                        {{--<h5><i>Aciqlama</i></h5>--}}
-                        {{--<p>{{$mehsul->aciqlama}}</p>--}}
-                    {{--</div>--}}
-
-
-                    {{--<div class="occasion-cart">--}}
-                        {{--<form action="{{route('sebet.add')}}" method="post">--}}
-                            {{--{{csrf_field()}}--}}
-                            {{--<input type="hidden" name="id" value="{{$mehsul->id}}" >--}}
-                            {{--<input type="submit" class="btn btn-theme item_add" value="Sebete elave et">--}}
-                        {{--</form>--}}
-                    {{--</div>--}}
-                    {{--<div class="social">--}}
-                        {{--<div class="social-left">--}}
-                            {{--<p>Share On :</p>--}}
-                        {{--</div>--}}
-                        {{--<div class="social-right">--}}
-                            {{--<ul class="social-icons">--}}
-                                {{--<li><a href="#" class="facebook"></a></li>--}}
-                                {{--<li><a href="#" class="twitter"></a></li>--}}
-                                {{--<li><a href="#" class="g"></a></li>--}}
-                                {{--<li><a href="#" class="instagram"></a></li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                        {{--<div class="clearfix"> </div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="clearfix"> </div>--}}
-                {{--<!---728x90--->--}}
-                {{--<div class="bootstrap-tab animated wow slideInUp" data-wow-delay=".5s">--}}
-                    {{--<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">--}}
-                        {{--<ul id="myTab" class="nav nav-tabs" role="tablist">--}}
-                            {{--<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Aciqlama</a></li>--}}
-                            {{--<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Reviews(2)</a></li>--}}
-                            {{--<li role="presentation" class="dropdown">--}}
-                                {{--<a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Information <span class="caret"></span></a>--}}
-                                {{--<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">--}}
-                                    {{--<li><a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">cleanse</a></li>--}}
-                                    {{--<li><a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">fanny</a></li>--}}
-                                {{--</ul>--}}
-                            {{--</li>--}}
-                        {{--</ul>--}}
-                        {{--<div id="myTabContent" class="tab-content">--}}
-                            {{--<div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">--}}
-                              {{--<p>{{$mehsul->aciqlama}}</p>--}}
-                            {{--</div>--}}
-                            {{--<div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile" aria-labelledby="profile-tab">--}}
-                                {{--<div class="bootstrap-tab-text-grids">--}}
-                                    {{--<div class="bootstrap-tab-text-grid">--}}
-                                        {{--<div class="bootstrap-tab-text-grid-left">--}}
-                                            {{--<img src="images/4.png" alt=" " class="img-responsive" />--}}
-                                        {{--</div>--}}
-                                        {{--<div class="bootstrap-tab-text-grid-right">--}}
-                                            {{--<ul>--}}
-                                                {{--<li><a href="#">Admin</a></li>--}}
-                                                {{--<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>Reply</a></li>--}}
-                                            {{--</ul>--}}
-                                            {{--<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis--}}
-                                                {{--suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem--}}
-                                                {{--vel eum iure reprehenderit.</p>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="clearfix"> </div>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="bootstrap-tab-text-grid">--}}
-                                        {{--<div class="bootstrap-tab-text-grid-left">--}}
-                                            {{--<img src="images/5.png" alt=" " class="img-responsive" />--}}
-                                        {{--</div>--}}
-                                        {{--<div class="bootstrap-tab-text-grid-right">--}}
-                                            {{--<ul>--}}
-                                                {{--<li><a href="#">Admin</a></li>--}}
-                                                {{--<li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>Reply</a></li>--}}
-                                            {{--</ul>--}}
-                                            {{--<p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis--}}
-                                                {{--suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem--}}
-                                                {{--vel eum iure reprehenderit.</p>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="clearfix"> </div>--}}
-                                    {{--</div>--}}
-                                   {{----}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                          {{----}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="clearfix"> </div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-
-
-
-
+    </section>
     @endsection

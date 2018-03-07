@@ -53,7 +53,15 @@ Route::group(['prefix'=>'admin','namespace'=>'admin'],function(){
 
         });
 
+        Route::group(['prefix'=>'sifaris'],function (){
 
+            Route::match(['get','post'],'/','SifarisController@index')->name('admin.sifaris');
+            Route::get('/yeni','SifarisController@form')->name('admin.sifaris.yeni');
+            Route::get('/duzelt/{id}','SifarisController@form')->name('admin.sifaris.duzelt');
+            Route::post('/yaddaSaxla/{id?}','SifarisController@yaddaSaxla')->name('admin.sifaris.yaddaSaxla');
+            Route::get('/sil/{id}','SifarisController@sil')->name('admin.sifaris.sil');
+
+        });
 
     });
 });
@@ -73,7 +81,7 @@ Route::group(['prefix'=>'sebet'],function (){
     Route::post('add','SebetController@add')->name('sebet.add');
     Route::delete('/sil/{rowId}','SebetController@sil')->name('sebet.sil');
     Route::delete('/boshalt','SebetController@boshalt')->name('sebet.boshalt');
-    Route::patch('/guncelle/{rowid}','SebetController@guncelle')->name('sebet.guncelle');
+    Route::post('/guncelle/{rowid}','SebetController@guncelle')->name('sebet.guncelle');
 
 });
 
