@@ -27,7 +27,7 @@ class CreateSifarishTable extends Migration
             $table->string('el_telefon',25)->nullable();
 
 
-            $table->timestamp('yaradilma_tarixi')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('yaradilma_tarixi');
             $table->timestamp('guncellenme_tarixi')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE
             CURRENT_TIMESTAMP'));
 

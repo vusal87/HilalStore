@@ -327,15 +327,15 @@
 
 </div>
 <div class="loader">
-		<span class="circle">LOA
+		<span class="circle">YÜK
 		<div class="scircle"></div>
 		<div class="scircle"></div>
 		</span>
-    <span class="circle">D
+    <span class="circle">LƏ
 		<div class="scircle"></div>
 		<div class="scircle"></div>
 		</span>
-    <span class="circle">ING
+    <span class="circle">NIR
 		<div class="scircle"></div>
 		<div class="scircle"></div>
 		</span>

@@ -17,7 +17,7 @@ class CreateSebetTable extends Migration
             $table->increments('id');
             $table->integer('istifadeci_id')->unsigned();
 
-            $table->timestamp('yaradilma_tarixi')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('yaradilma_tarixi');
             $table->timestamp('guncellenme_tarixi')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE
             CURRENT_TIMESTAMP'));
 
