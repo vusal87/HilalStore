@@ -26,11 +26,7 @@ class CreateSebetMehsulTable extends Migration
             $table->string('veziyyet',30);
 
 
-            $table->timestamp('yaradilma_tarixi');
-            $table->timestamp('guncellenme_tarixi')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE
-            CURRENT_TIMESTAMP'));
-
-            $table->timestamp('silinme_tarixi')->nullable();
+            $table->timestamps();
 
             $table->foreign('sebet_id')->references('id')->on('sebet')->onDelete('cascade');
             $table->foreign('mehsul_id')->references('id')->on('mehsul')->onDelete('cascade');

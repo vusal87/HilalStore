@@ -18,11 +18,7 @@ class CreateKateqoriTable extends Migration
             $table->integer('ust_id')->nullable();
             $table->string('kateqori_adi',30);
             $table->string('slug',40);
-            $table->timestamp('yaradilma_tarixi');
-            $table->timestamp('guncellenme_tarixi')->default(DB::raw('CURRENT_TIMESTAMP on UPDATE
-            CURRENT_TIMESTAMP'));
-            //$table->softDeletes();
-            $table->timestamp('silinme_tarixi')->nullable();
+          $table->timestamps();
         });
     }
 
