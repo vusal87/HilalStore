@@ -18,14 +18,14 @@ class AnasehifeController extends Controller
         $mehsullar_slider= mehsul::select('mehsul.*')
             ->join('mehsul_detay','mehsul_detay.mehsul_id','mehsul.id')
             ->where('mehsul_detay.goster_slider',1)
-            ->orderBy('guncellenme_tarixi','desc')
+//            ->orderBy('guncellenme_tarixi','desc')
             ->take(9)->get();
 
 //        MehsulDetay::with('mehsul')->where('cox_satilan',1)->take(9)->get();
         $mehsullar_cox_satan=mehsul::select('mehsul.*')
             ->join('mehsul_detay','mehsul_detay.mehsul_id','mehsul.id')
             ->where('mehsul_detay.cox_satilan',1)
-            ->orderBy('guncellenme_tarixi','desc')
+//            ->orderBy('guncellenme_tarixi','desc')
             ->take(40)->get();
 
 //        MehsulDetay::with('mehsul')->where('endirimli',1)->take(9)->get();
@@ -33,7 +33,7 @@ class AnasehifeController extends Controller
         $mehsullar_endirimli=mehsul::select('mehsul.*')
             ->join('mehsul_detay','mehsul_detay.mehsul_id','mehsul.id')
             ->where('mehsul_detay.endirimli',1)
-            ->orderBy('guncellenme_tarixi','desc')
+//            ->orderBy('guncellenme_tarixi','desc')
             ->take(12)->get();
 
 
