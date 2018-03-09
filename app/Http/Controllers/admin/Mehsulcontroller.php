@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\mehsul;
 use App\Models\MehsulDetay;
 
-class Mehsulcontroller extends Controller
+class MehsulController extends Controller
 {
     public function index()
     {
