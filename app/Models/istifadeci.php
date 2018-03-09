@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class istifadeci extends Authenticatable
 {
-    use SoftDeletes;
 
     protected  $table='istifadeci';
 

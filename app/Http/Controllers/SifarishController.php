@@ -9,7 +9,7 @@ class SifarishController extends Controller
 {
     public  function index()
     {
-        $cek =sifarish::with('sebet')->orderByDesc('yaradilma_tarixi')->get();
+        $cek =sifarish::with('sebet')->orderByDesc('created_at')->get();
         $sifarishler = [];
         foreach ($cek as $c){
            if($c->sebet->user->id == Auth()->user()->id)

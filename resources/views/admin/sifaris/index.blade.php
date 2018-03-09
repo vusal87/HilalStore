@@ -35,7 +35,7 @@
                 <td>{{$entry->sebet->istifadeci->adSoyad}}</td>
                 <td>{{$entry->sifarish_deyeri * ((100+config('cart.tax'))/100) }}Azn</td>
                 <td>{{$entry->veziyyet}}</td>
-                <td>{{$entry->yaradilma_tarixi}}</td>
+                <td>{{$entry->created_at}}</td>
                 <td style="width: 100px">
                     <a href="{{route('admin.sifaris.duzelt',$entry->id)}}" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="duzelt">
                         <span class="fa fa-pencil"></span>

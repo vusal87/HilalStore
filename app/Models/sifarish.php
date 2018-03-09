@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class sifarish extends Model
 {
-    use SoftDeletes;
 
     protected  $table ='sifarish';
 

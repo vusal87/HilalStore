@@ -8,7 +8,6 @@ use App\Models\mehsul;
 
 class SebetMehsul extends Model
 {
-use SoftDeletes;
 
 protected  $table="sebet_mehsul";
     protected $guarded=[];

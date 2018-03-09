@@ -46,7 +46,7 @@
         {{--dd(\App\Models\mehsul::find($mehsulCartItem->id)->detay->mehsul_shekli);--}}
         {{--@endphp--}}
                             <a href="{{route('mehsul',$mehsulCartItem->options->slug) }}">
-                                <img src="{{$mehsulCartItem->options->shekil && $mehsulCartItem->options->shekil[0]->img_name !=null ?
+                                <img src="{{$mehsulCartItem->photos &&$mehsulCartItem->options->shekil && $mehsulCartItem->options->shekil[0]->img_name !=null ?
                                              asset('/uploads/mehsullar/'.$mehsulCartItem->options->shekil[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
                                      alt="" style="max-height: 250px"  class="img-responsive" >
 

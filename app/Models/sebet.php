@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class sebet extends Model
 {
-    use SoftDeletes;
 
    protected $table='sebet';
 
@@ -30,7 +29,7 @@ class sebet extends Model
         ->leftJoin('sifarish as si','si.sebet_id','=','s.id')
             ->where('s.istifadeci_id',auth()->id())
             ->whereRaw('si.id is null')
-            ->orderByDesc('s.yaradilma_tarixi')
+            ->orderByDesc('s.created_at')
             ->select('s.id')
             ->first();
             if(!is_null($aktiv_sebet)) return $aktiv_sebet->id;

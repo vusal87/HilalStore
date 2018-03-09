@@ -55,7 +55,7 @@
                         <span class="label label-warning">Passiv</span>
                     @endif
                 </td>
-                <td>{{$entry->yaradilma_tarixi}}</td>
+                <td>{{$entry->created_at}}</td>
 
                 <td style="width: 100px">
                     <a href="{{route('admin.istifadeci.duzelt',$entry->id)}}" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="duzelt">

@@ -54,10 +54,10 @@ class IstifadeciController extends Controller
             $axtarilan=request('axtarilan');
             $list=istifadeci::where('adSoyad','like',"%$axtarilan%")
                 ->orWhere('email','like',"%$axtarilan%")
-                ->orderByDesc('yaradilma_tarixi')
+                ->orderByDesc('created_at')
                 ->paginate(8);
         }else{
-            $list= istifadeci::orderByDesc('yaradilma_tarixi')->paginate(8);
+            $list= istifadeci::orderByDesc('created_at')->paginate(8);
 
         }
 
