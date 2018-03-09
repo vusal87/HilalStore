@@ -7,13 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class mehsul extends Model
 {
-    use SoftDeletes;
+//    use SoftDeletes;
 
     protected $table="mehsul";
     protected $guarded=[];
-    const CREATED_AT = 'yaradilma_tarixi';
-    const UPDATED_AT = 'guncellenme_tarixi';
-    const DELETED_AT='silinme_tarixi';
+
 
 
             public  function kateqoriler()

@@ -18,7 +18,7 @@ class CreateKateqoriTable extends Migration
             $table->integer('ust_id')->nullable();
             $table->string('kateqori_adi',30);
             $table->string('slug',40);
-          $table->timestamps();
+            $table->timestamps();
         });
     }
 

@@ -30,7 +30,8 @@
                                         </div>
                                         <div class="product-image--container">
                                             <div class="imgParent">
-                                                <img class="img-responsive product-image--featured " id="featured" src="{{$mehsul->photos[0]->img_name!=null ?
+                                                <img class="img-responsive product-image--featured " id="featured" src="{{count($mehsul->photos)!=null?
+                                                 asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name):'http://via.placeholder.com/300x200?text=mehsulShekli' &&$mehsul->photos[0]->img_name!=null ?
                                          asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
                                                      alt=""  >
                                             </div>

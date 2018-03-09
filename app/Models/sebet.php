@@ -14,9 +14,7 @@ class sebet extends Model
    protected $table='sebet';
 
     protected $guarded=[];
-    const CREATED_AT = 'yaradilma_tarixi';
-    const UPDATED_AT = 'guncellenme_tarixi';
-    const DELETED_AT='silinme_tarixi';
+
 
     public  function sifarish()
     {

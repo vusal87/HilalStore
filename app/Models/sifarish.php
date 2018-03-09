@@ -16,9 +16,7 @@ class sifarish extends Model
         'bank','adSoyad','adres','ev_telefon','el_telefon'
     ];
 
-    const CREATED_AT = 'yaradilma_tarixi';
-    const UPDATED_AT = 'guncellenme_tarixi';
-    const DELETED_AT='silinme_tarixi';
+
 
     public  function sebet()
     {

@@ -16,9 +16,7 @@ class istifadeci extends Authenticatable
 
     protected $hidden = ['shifre', 'aktivasyon_acari',];
 
-    const CREATED_AT = 'yaradilma_tarixi';
-    const UPDATED_AT = 'guncellenme_tarixi';
-    const DELETED_AT='silinme_tarixi';
+
 
     public function getAuthPassword()
     {
