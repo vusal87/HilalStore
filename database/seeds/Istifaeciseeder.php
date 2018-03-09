@@ -31,22 +31,22 @@ class Istifaeciseeder extends Seeder
             'ev_telefonu'=>'(050)4552122',
             'el_telefonu'=>'(555)6666666'
         ]);
-        for ($i=0;$i<50;$i++)
-        {
-            $istifadeci_mushteri=istifadeci::create([
-                'adSoyad'=>$faker->name,
-                'email'=>$faker->unique()->safeEmail,
-                'shifre'=>bcrypt(123456),
-                'aktif_mi'=>1,
-                'admin_mi'=>0
-            ]);
-            $istifadeci_mushteri->melumat()->create([
-                'adres'=>$faker->address,
-                'ev_telefonu'=>$faker->phonenumber,
-                'el_telefonu'=>$faker->phonenumber
-            ]);
-
-        }
+//        for ($i=0;$i<50;$i++)
+//        {
+//            $istifadeci_mushteri=istifadeci::create([
+//                'adSoyad'=>$faker->name,
+//                'email'=>$faker->unique()->safeEmail,
+//                'shifre'=>bcrypt(123456),
+//                'aktif_mi'=>1,
+//                'admin_mi'=>0
+//            ]);
+//            $istifadeci_mushteri->melumat()->create([
+//                'adres'=>$faker->address,
+//                'ev_telefonu'=>$faker->phonenumber,
+//                'el_telefonu'=>$faker->phonenumber
+//            ]);
+//
+//        }
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }
