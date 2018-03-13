@@ -105,7 +105,7 @@
                 <form action="{{route('sebet.boshalt')}}" method="post">
                     {{csrf_field()}}
                     {{method_field('DELETE')}}
-                    <input type="submit" class="shopingCart hover pull-left" value="Sebeti Bosalt">
+                    <input type="submit" class="Sebeti_Bosalt pull-left" value="Sebeti Bosalt">
                 </form>
 
                 <div class="checkout-left">

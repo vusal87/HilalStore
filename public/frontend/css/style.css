@@ -852,7 +852,45 @@ position: relative;
 	text-transform: uppercase;
 	font-weight: 700;
 }
-
+@media only screen and (max-width: 450px) {
+	.checkout .shopingCart {
+		background-color: #c47135;
+		border: none;
+		color: #ffffff;
+		cursor: pointer;
+		display: inline-block;
+		font-family: 'BenchNine', Arial, sans-serif;
+		font-size: 1em;
+		/* font-size: 22px; */
+		line-height: 1em;
+		/* margin: 40px; */
+		width: 100wh;
+		margin-top: 15px;
+		margin-right: 300px;
+		outline: none;
+		padding: 12px 20px 10px;
+		position: relative;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+}
+.checkout .container .Sebeti_Bosalt{
+	background-color: darkred;
+	border: none;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'BenchNine', Arial, sans-serif;
+	font-size: 1em;
+	/*font-size: 22px;*/
+	line-height: 1em;
+	/*margin: 15px 40px;*/
+	outline: none;
+	padding: 12px 20px 10px;
+	position: relative;
+	text-transform: uppercase;
+	font-weight: 700;
+}
 .checkout  .shopingCart:before,
  .checkout  .shopingCart:after {
 	content: "";
