@@ -1,10 +1,11 @@
 @extends('FrontEnd.layout.master')
+@section('title','Axtar')
 @section('content')
     <div class="container">
         <div class="row">
             <ol class="breadcrumb">
-                <li><a href="{{route('anasehife')}}">Anasehife</a></li>
-                <li>Axtarish Neticasi</li>
+                <li><a href="{{route('anasehife')}}"><i class="fa fa-home"></i>Anasehife</a></li>
+                <li>Axtarish Nəticəsi</li>
             </ol>
             <div class="col-md-12">
                 <h2>

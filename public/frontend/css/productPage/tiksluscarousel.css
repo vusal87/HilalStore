@@ -3,6 +3,7 @@
 .codepen-container {
     padding: 3em;
     box-shadow: 1px 1px 1px 1px black;
+    background-color: whitesmoke;
 }
 
 .content-container {

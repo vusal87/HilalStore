@@ -4,7 +4,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-                <li><a href="{{route('anasehife')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Anasehife</a></li>
+                <li><a href="{{route('anasehife')}}"><i class="fa fa-home"></i>Anasehife</a></li>
                 <li class="active">Qeyiyyat</li>
             </ol>
         </div>
@@ -44,11 +44,7 @@
 
                      <input id="shifre-tekrari" name="shifre_confirmation" type="password" placeholder="Password Confirmation" required=" " >
 
-                     <div class="register-check-box">
-                         <div class="check">
-                             <label class="checkbox"><input type="checkbox" name="checkbox"><i> </i>I accept the terms and conditions</label>
-                         </div>
-                     </div>
+
                      <input type="submit" value="Register">
                  </form>
              </div>

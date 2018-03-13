@@ -190,7 +190,7 @@
 <body>
 <div class="wsmenucontainer clearfix">
     <div class="overlapblackbg"></div>
-    <div class="wsmobileheader clearfix"> <a id="wsnavtoggle" class="animated-arrow"><span></span></a> <a class="smallogo"></a> <a class="callusicon" href="tel:123456789"><span class="fa fa-phone"></span></a> </div>
+    <div class="wsmobileheader clearfix"> <a id="wsnavtoggle" class="animated-arrow"><span></span></a> <a class="smallogo"></a> <a class="callusicon" href="tel:+994705004242"><span class="fa fa-phone"></span></a> </div>
 
     <div class="header">
         <a class="logo-top" href="{{route('anasehife')}}" style="position: absolute;left: 3%"></a>
@@ -235,7 +235,7 @@
                     </li>
                     <li><a class="enirimdeOlanlar" data-href="#enirimdeOlanlar" href="{{route('anasehife')}}#enirimdeOlanlar">Endirimde olanlar </a>
                     </li>
-                    <li><a class="elaqe" href="#elaqe"> ELAQE </a>
+                    <li><a class="elaqe" href="#elaqe"> Elaqe </a>
                     </li>
                     @guest
                     <li>
@@ -261,7 +261,7 @@
                     </li>
                     <li><a href="#">
                             <i class="fa fa-sign-in"></i>
-                            Qiydiyyat <span class="arrow"></span>
+                            Qeydiyyat <span class="arrow"></span>
                         </a>
                         <div class="megamenu halfdiv03">
                             <h3 class="text-center">Qeydiyyat</h3>

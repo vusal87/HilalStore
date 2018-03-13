@@ -5,7 +5,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-                <li><a href="{{route('anasehife')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Ana Sehife</a></li>
+                <li><a href="{{route('anasehife')}}"><i class="fa fa-home"></i>Ana Sehife</a></li>
                 <li class="active">Sebet sehifesi</li>
             </ol>
         </div>
@@ -58,10 +58,6 @@
                         <td class="invert">
                             <div class="quantity">
                                 <div class="quantity-select">
-                                    {{--<button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;" class="entry value-minus mehsul-azalt" data-id="{{$mehsulCartItem->rowId}}" data-eded="{{$mehsulCartItem->qty-1}}" type="button"><i class="fa fa-minus">&nbsp;</i></button>--}}
-                                    {{--<input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">--}}
-                                    {{--<button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="entry value-plus mehsul-artir active" data-id="{{$mehsulCartItem->rowId}}" data-eded="{{$mehsulCartItem->qty+1}}" type="button"><i class="fa fa-plus">&nbsp;</i></button>--}}
-
 
                                     <div  class="entry value-minus mehsul-azalt" data-id="{{$mehsulCartItem->rowId}}" data-eded="{{$mehsulCartItem->qty-1}}">&nbsp;</div>
                                     <div  class="entry value"><span id="{{$mehsulCartItem->rowId}}">{{$mehsulCartItem->qty}}</span></div>

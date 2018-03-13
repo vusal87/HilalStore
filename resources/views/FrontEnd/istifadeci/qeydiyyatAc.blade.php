@@ -4,7 +4,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-                <li><a href="{{route('anasehife')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Anasehife</a></li>
+                <li><a href="{{route('anasehife')}}"><i class="fa fa-home"></i>Anasehife</a></li>
                 <li class="active">Daxil ol</li>
             </ol>
         </div>
