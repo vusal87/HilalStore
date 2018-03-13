@@ -221,7 +221,7 @@ a:hover.reviews {
 @media only screen and (max-width: 425px) {
     .right-container .form-option .add-to-box{
         margin-top: 36px;
-        /*margin-left: -99px;*/
+        margin-left: -99px;
     }
 }
 
