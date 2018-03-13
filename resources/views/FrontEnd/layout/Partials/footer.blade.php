@@ -12,7 +12,7 @@
                 <h3>Bizimle Elaqe</h3>
                 <hr>
                 <ul>
-                    <li class="text-left"><i class="fas fa-map-marker"></i>Sederek TM,3 cu sira, </li>
+                    <li class="text-left"><i class="fas fa-map-marker"></i>Sederek ticaret merkezi,teserrufat bazari,sira 3,magaza 42 </li>
                     <li class="text-left"><i class="fas fa-envelope"></i><a href="mailto:info@example.com">hilalstore.az@gmail.com</a></li>
                     <li class="text-left"><i class="fas fa-phone"></i>+99470 500 42 42</li>
                 </ul>
