@@ -5,14 +5,16 @@
 
             <div class="col-md-3  col-xs-12 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
                 <h3>Haqqimizda</h3>
+                <hr>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
             </div>
             <div class="col-md-3 col-md-offset-6  col-xs-12 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
                 <h3>Bizimle Elaqe</h3>
+                <hr>
                 <ul>
-                    <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Sederek TM,3 cu sira, </li>
-                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+99470 500 42 42</li>
+                    <li class="text-left"><i class="fas fa-map-marker"></i>Sederek TM,3 cu sira, </li>
+                    <li class="text-left"><i class="fas fa-envelope"></i><a href="mailto:info@example.com">hilalstore.az@gmail.com</a></li>
+                    <li class="text-left"><i class="fas fa-phone"></i>+99470 500 42 42</li>
                 </ul>
             </div>
 
