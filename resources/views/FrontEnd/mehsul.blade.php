@@ -55,7 +55,7 @@
                                             <div class="price-block">
                                                 <div class="price-box text-left">
                                                     <h3 class="text-left">Qiymet</h3>
-                                                    <p>{{$mehsul->qiymeti}}</p>
+                                                    <p>{{$mehsul->qiymeti}}Azn</p>
                                                 </div>
                                             </div>
 
