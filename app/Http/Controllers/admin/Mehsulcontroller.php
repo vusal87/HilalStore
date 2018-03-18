@@ -44,7 +44,9 @@ class MehsulController extends Controller
 
     public function yaddaSaxla($id=0)
     {
+//        dd(mehsul::orderBy('id', 'desc')->first());
         $data=request()->only('mehsul_adi','slug','qiymeti','aciqlama');
+
         if (!request()->filled('slug'))
             $data['slug']=str_slug(request('mehsul_adi'));
         request()->merge(['slug'=>$data['slug']]);
@@ -72,7 +74,7 @@ class MehsulController extends Controller
             $entry->kateqoriler()->sync($kateqoriler);
         }
         else{
-            $entry= mehsul::create( $data);
+            $entry= mehsul::create($data);
             $entry->detay()->create($data_detay);
             $entry->kateqoriler()->attach($kateqoriler);
         }

@@ -18,7 +18,7 @@ class CreateMehsulTable extends Migration
             $table->string('slug',150);
             $table->string('mehsul_adi',150);
             $table->text('aciqlama');
-            $table->decimal('qiymeti',10,3);
+            $table->decimal('qiymeti',10,2);
             $table->timestamps();
         });
     }
