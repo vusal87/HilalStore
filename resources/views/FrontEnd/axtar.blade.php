@@ -30,11 +30,9 @@
 
                                 </div>
                                 <div class="new-collections-grid1 item-contents" data-wow-delay=".5s">
-                                    <a href="{{route('mehsul',$mehsul->slug)}}" class="new-collections-grid1-image">
-                                        <img class="img-responsive" src="{{$mehsul->detay->mehsul_shekli!=null ?
-                                             asset('/uploads/mehsullar/'.$mehsul->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
-                                             alt="" style="min-height: 250px;max-height: 250px"  >
-                                    </a>
+                                    <img src="{{count($mehsul->photos) && $mehsul->photos[0]->img_name !=null ?
+                                             asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                         alt="" style="min-height: 250px;max-height: 250px"  class="img-responsive" >
                                     {{--<p> <a href="{{route('mehsul',$mehsul->slug)}}"></a></p>--}}
                                     <div class="new-collections-grid1-left ">
                                         <a href="">

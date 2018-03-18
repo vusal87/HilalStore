@@ -326,19 +326,8 @@
 
 
 </div>
-<div class="loader">
-		<span class="circle">YÜK
-		<div class="scircle"></div>
-		<div class="scircle"></div>
-		</span>
-    <span class="circle">LƏ
-		<div class="scircle"></div>
-		<div class="scircle"></div>
-		</span>
-    <span class="circle">NIR
-		<div class="scircle"></div>
-		<div class="scircle"></div>
-		</span>
+<div id="preloader">
+    <div id="loader"></div>
 </div>
 
 </body>

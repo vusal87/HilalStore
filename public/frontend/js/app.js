@@ -46,14 +46,13 @@ $('.owl-carousel').owlCarousel({
 
 
 
-$(document).ready(function(){
-    $(".loader").fadeOut();
-    $(".wsmenu").sticky({
-        className:'wsmans',
-        zIndex:9999
+jQuery(document).ready(function($) {
+    $(window).on("load",function (){
+
+        $("#preloader").fadeOut(500);
+
     });
 });
-
 
 
 $(document).ready(function () {

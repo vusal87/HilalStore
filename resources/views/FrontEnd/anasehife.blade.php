@@ -1,5 +1,5 @@
 @extends('FrontEnd.layout.master')
-@section('title','anasehife')
+@section('title','Anasehife')
 @section('content')
     @if(session()->has('mesaj'))
 <div class="container">
@@ -39,22 +39,18 @@
         </div>
     <div  id="coxSatilanlar" >
         <div class="container">
-                <div class="headerBashlig">
-                    <h3 class="animated wow zoomIn coxSatilanlar text-center" data-wow-delay=".5s">Çox Satilanlar</h3>
-                </div>
+            <div class="headerBashlig row">
+
+                    <h2 class="animated wow zoomIn coxSatilanlar" data-wow-delay=".5s">Çox Satilanlar</h2>
+
+            </div>
+
             <hr>
             <div class="new-collections-grids">
                         <div class="row">
                             @foreach( $mehsullar_cox_satan as $mehsul)
 
                                 <div class="col-md-3 col-sm-6 col-xs-12 new-collections-grid ">
-                                    <div class="overlay">
-                                        <div class="borderTop"></div>
-                                        <div class="borderRight"></div>
-                                        <div class="borderLeft"></div>
-                                        <div class="borderBottom"></div>
-
-                                    </div>
                                     <div class="new-collections-grid1 item-contents" data-wow-delay=".5s">
                                         <a href="{{route('mehsul',$mehsul->slug)}}" class="new-collections-grid1-image">
                                             <img src="{{count($mehsul->photos) && $mehsul->photos[0]->img_name !=null ?
@@ -88,7 +84,7 @@
             </div>
         <div class="container" id="enirimdeOlanlar">
 
-            <h3 class="animated wow zoomIn text-center enirimdeOlanlar" data-wow-delay=".5s">Endirimde Olanlar</h3>
+            <h2 class="animated wow zoomIn text-center enirimdeOlanlar" data-wow-delay=".5s">Endirimde Olanlar</h2>
             <hr>
             <div class="new-collections-grids">
                 <div class="row">
