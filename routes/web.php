@@ -100,7 +100,7 @@ Route::group(['prefix'=>'istifadeci'],function(){
 
     Route::get('/qeydiyyatOl','IstifadeciController@qeydiyyat_form')->name('istifadeci.qeydiyyatOl');
     Route::post('/qeydiyyatOl','IstifadeciController@qeydiyyat');
-    Route::get('/aktivlesdir/{acar}','IstifadeciController@aktivleshdir')->name('aktivleshdir');
+    Route::get('/aktivleshdir/{acar}','IstifadeciController@aktivleshdir')->name('aktivleshdir');
 
     Route::post('/akauntuBagla','IstifadeciController@akauntuBagla')->name('istifadeci.akauntuBagla');
 
