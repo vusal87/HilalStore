@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <ol class="breadcrumb">
-                <li><a href="{{route('anasehife')}}"><i class="fa fa-home"></i>Anasehife</a></li>
+                <li><a href="{{route('anasehife')}}"><i class="fas fa-home"></i>Anasehife</a></li>
                 <li>Axtarish Nəticəsi</li>
             </ol>
             <div class="col-md-12">

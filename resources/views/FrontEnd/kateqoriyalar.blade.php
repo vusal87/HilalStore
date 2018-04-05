@@ -4,7 +4,7 @@
     <div class="breadcrumbs">
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-                <li><a href="{{route('anasehife')}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>AnaSehife</a></li>
+                <li><a href="{{route('anasehife')}}"><i class="fas fa-home"></i>AnaSehife</a></li>
                 <li class="active">{{$kateqori->kateqori_adi}}</li>
             </ol>
         </div>
