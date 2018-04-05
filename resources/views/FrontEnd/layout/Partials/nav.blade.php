@@ -34,20 +34,30 @@
                     </li>
                     <li><a href="{{route('anasehife')}}" class="active menuhomeicon"><i class="fa fa-home"></i></a></li>
 
-                    <li><a href="#">Kateqoriyalar <span class="arrow"></span></a>
+                    <li>
+                        <a href="#">Kateqoriyalar
+                            <span class="arrow"></span>
+                        </a>
                         @php
                             $kateqoriler= \App\Models\Kateqori::whereRaw('ust_id is null')->take(8)->get();
                         @endphp
+
                         <div class="megamenu clearfix">
                         @foreach($kateqoriler as $kateqori)
                             <ul class="col-lg-3 col-md-3 col-xs-12 link-list">
                                 <li >
                                     <div class="headerSpan">
-                                        <a  class="categoriHeader" href="{{route('kateqori',$kateqori->slug)}}">{{$kateqori->kateqori_adi}}</a>
+                                        <a  class="categoriHeader" href="{{route('kateqori',$kateqori->slug)}}">
+                                            {{$kateqori->kateqori_adi}}
+                                        </a>
                                     </div>
                                 </li>
                                 @foreach($kateqori->mehsullar as $mehsull)
-                                <li><a href="{{route('mehsul',$mehsull->slug)}}">{{$mehsull->mehsul_adi}}<i class="fas fa-chevron-right"></i></a></li>
+                                <li class="productName">
+                                    <a href="{{route('mehsul',$mehsull->slug)}}">{{$mehsull->mehsul_adi}}
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
                                 @endforeach
                                 <a href="">Etrafli</a>
                             </ul>

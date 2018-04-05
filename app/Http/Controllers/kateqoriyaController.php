@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kateqori;
+use App\Models\Kateqori;
 use App\Models\mehsul;
 use Illuminate\Http\Request;
 
