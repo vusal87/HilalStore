@@ -30,7 +30,10 @@ body a:hover{
 
 }
 
+.header .error{
+	background-color: whitesmoke;
 
+}
 .header-grid{
 	padding:2em 0;
 	border-bottom:1px solid #DEDEDE;

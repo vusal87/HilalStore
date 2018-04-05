@@ -105,10 +105,12 @@ Route::group(['prefix'=>'istifadeci'],function(){
     Route::post('/akauntuBagla','IstifadeciController@akauntuBagla')->name('istifadeci.akauntuBagla');
 
 });
-Route::get('test/mail',function(){
-    $istifadeci = \App\Models\istifadeci::find(1);
-   return new App\Mail\IstifadeciQeydiyyatMail($istifadeci);
-});
+//Route::get('test/mail',function(){
+//    \Mail::send('email.cek',[],function($mail) {
+//        $mail->to('vusalhaci87@gmail.com')->subject('cek');
+//    });
+//
+//});
 
 
 

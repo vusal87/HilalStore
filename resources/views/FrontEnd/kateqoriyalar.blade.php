@@ -40,9 +40,9 @@
 
                                 <div class="new-collections-grid1-image">
                                     <a href="{{route('mehsul',$mehsul->slug) }}" class="product-image">
-                                        <img class="img-responsive" src="{{$mehsul->detay->mehsul_shekli!=null ?
-                                             asset('/uploads/mehsullar/'.$mehsul->detay->mehsul_shekli) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
-                                                                                                                 alt="" style="min-height: 250px;max-height: 250px"  >
+                                        <img src="{{count($mehsul->photos) && $mehsul->photos[0]->img_name !=null ?
+                                             asset('/uploads/mehsullar/'.$mehsul->photos[0]->img_name) :'http://via.placeholder.com/300x200?text=mehsulShekli'}}"
+                                             alt="" style="min-height: 250px;max-height: 250px"  class="img-responsive" >
                                     </a>
                                 </div>
 
