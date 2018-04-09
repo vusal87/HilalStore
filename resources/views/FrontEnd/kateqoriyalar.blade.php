@@ -51,7 +51,7 @@
                                         <h4 class="text-left itemName">{{$mehsul->mehsul_adi}}</h4>
                                     </a>
 
-                                    <h4 class="text-left itemPrice">{{$mehsul->qiymeti}}
+                                    <h4 class="text-left itemPrice">{{$mehsul->qiymeti}}Azn
                                     </h4>
                                     <form action="{{route('sebet.add')}}" method="post">
                                         {{csrf_field()}}

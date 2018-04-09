@@ -128,7 +128,7 @@
             </p>
                     </div>
 
-                    <a class="shopingCart hover pull-right"  href="{{route('odeme')}}">Sifariş et</a>
+                    <a style="text-decoration: none" class="shopingCart hover pull-right"  href="{{route('odeme')}}">Sifariş et</a>
 
 
                     <div class="clearfix"> </div>
