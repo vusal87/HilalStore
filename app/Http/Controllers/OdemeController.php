@@ -26,7 +26,9 @@ class OdemeController extends Controller
 
         $istifadeci_melumat=auth()->user()->melumat;
         if(Cart::total()<100){
-            return back()->with('error','kasibsiniz');
+            $errors=['error'=>'Mehsul ve ya Mehsullarin dəyəri 100Azn dən az olmamalidir'];
+
+            return back()->with($errors,'errors');
         };
 
         return view('FrontEnd/odeme',compact('istifadeci_melumat'));
