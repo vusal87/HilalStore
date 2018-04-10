@@ -44,6 +44,9 @@
 	.wsmenucontainer .header {
 	}
 }
+.megamenu .productName a .fa-chevron-right{
+	padding-right: 15px;
+}
 /*@media screen and (max-width: 780px) {*/
 	/*.header .wsmainscroll {*/
 	/*display: none;*/

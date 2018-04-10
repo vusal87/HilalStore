@@ -54,12 +54,12 @@
                                 </li>
                                 @foreach($kateqori->mehsullar as $mehsull)
                                 <li class="productName">
-                                    <a href="{{route('mehsul',$mehsull->slug)}}">{{$mehsull->mehsul_adi}}
-                                        <i class="fas fa-chevron-right"></i>
+                                    <a href="{{route('mehsul',$mehsull->slug)}}">   <i class="fas fa-chevron-right"></i>{{$mehsull->mehsul_adi}}
+
                                     </a>
                                 </li>
                                 @endforeach
-                                <a href="">Etrafli</a>
+                                <a  href="{{route('kateqori',$kateqori->slug)}}"> Etrafli</a>
                             </ul>
                             @endforeach
                         </div>

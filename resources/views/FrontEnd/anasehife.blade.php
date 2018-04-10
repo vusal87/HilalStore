@@ -1,5 +1,5 @@
 @extends('FrontEnd.layout.master')
-@section('title','Anasehife')
+@section('title','www.hilalstore.com')
 @section('content')
     @if(session()->has('mesaj'))
 <div class="container">
