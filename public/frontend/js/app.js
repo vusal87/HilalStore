@@ -69,7 +69,7 @@ $(document).ready(function () {
     $('.coxSatilanlar,.enirimdeOlanlar,.elaqe').click(function (e) {
         var linkhref=$(this).attr('data-href');
 
-        console.log($(linkhref));
+        // console.log($(linkhref));
         $('html,body').animate({
                 scrollTop:$(linkhref).offset().top -headerhight
                    },1000)  ;
