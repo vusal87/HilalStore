@@ -20,7 +20,7 @@ class SifarishController extends Controller
     public function detal($id)
     {
         $sifarish=sifarish::with('sebet.sebet_mehsullar.mehsul')->where('sifarish.id',$id)->firstOrFail();
-        dd($sifarish);
+//        dd($sifarish);
         return view('FrontEnd/sifarish',compact('sifarish'));
     }
 }

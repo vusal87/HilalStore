@@ -323,30 +323,31 @@ background-color: transparent;
 }
 }
 #coxSatilanlar .coxSatilanlar{
-margin-top: 40px;
+    margin-top: 40px;
 	line-height: 40px;
 }
 #coxSatilanlar .headerBashlig{
-	width: 100%;
+	width: 66%;
 	height: 100%;
 	margin:0 auto;
-	border-radius: 50%;
+	/*border-radius: 50%;*/
 	/*box-shadow: 1px 1px 1px 1px #EFB110;*/
 
 }
 #coxSatilanlar .headerBashlig h2{
 	background-color: white;
 	border-radius: 0%;
-	box-shadow: 0px 0px 2px 2px ;
+	/*box-shadow: 0px 0px 2px 2px ;*/
 
 }
+
 #elaqe h2{
 	background-color: white;
 	border-radius: 0%;
-	box-shadow: 0px 9px 30px 0px #EFB110;
+	/*box-shadow: 0px 9px 30px 0px #EFB110;*/
 }
 #enirimdeOlanlar h2{
 	background-color: white;
 	border-radius: 0%;
-	box-shadow:0px 9px 30px 0px #EFB110;
+	/*box-shadow:0px 9px 30px 0px #EFB110;*/
 }
