@@ -10,7 +10,7 @@
                     <div class="account-form">
                         <div class="section-subtitle" id="shipping-address">Gonderilecek Adress</div>
                         <div class="row">
-                            <div class="col-md-4 col-md-offset-4">
+                            <div class="col-md-5 col-md-offset-4">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12">
                                         <div class="form-group">
@@ -42,7 +42,7 @@
                                     <div class="col-md-6 col-sm-6">
                                         <div class="form-group">
                                             <label>Inzibati Rayon <span class="required"></span></label>
-                                            <input type="text" name="city" class="form-control" placeholder="Bakinin her hansi bir rayonu nezerde tututlur">
+                                            <input type="text" name="city" class="form-control">
                                         </div> <!-- /.form-group -->
                                     </div> <!-- /.col-md-6 -->
                                 </div> <!-- /.row -->
