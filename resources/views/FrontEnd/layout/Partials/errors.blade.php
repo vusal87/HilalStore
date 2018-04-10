@@ -9,6 +9,9 @@
     </div>
 @endif
 
-<div style="position: absolute; bottom: 50px;right: 10px">
-    {{ session('error') }}
+<div style="position: absolute;top:48%;left: 33%;color: red;font-weight: bold;font-size: 15px">
+    <div>
+         {{ session('error') }}
+    </div>
+
 </div>

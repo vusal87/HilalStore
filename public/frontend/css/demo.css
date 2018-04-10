@@ -81,6 +81,9 @@ background-color: transparent;
 
 
 }
+/*.owl-carousel .owl-nav .owl-prev:hover{*/
+	/*background-color:transparent;*/
+/*}*/
 .owl-carousel .owl-dots{
 	position: absolute;
 	bottom: 25px;
