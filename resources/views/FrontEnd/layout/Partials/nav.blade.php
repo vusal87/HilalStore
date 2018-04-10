@@ -12,7 +12,7 @@
     <div class="header">
         @if(isset($errors)&&$errors->has('email'))
             <div class="error">
-                <strong>{{$errors->first('email')}}</strong>
+                <strong><i class="fas fa-times-circle"></i>{{$errors->first('email')}}</strong>
 
             </div>
         @endif

@@ -31,8 +31,28 @@ body a:hover{
 }
 
 .header .error{
-	background-color: whitesmoke;
-
+	background-color: #FFBABA;
+	position: absolute;
+	color: red;
+	padding: 10px 100px;
+	top: 50px;
+	left: 38%;
+	box-shadow: 0px 0px 2px 2px #FFBABA ;
+}
+@media only screen and (max-width: 800px) {
+	.header .error{
+		background-color: #FFBABA;
+		position: absolute;
+		color: red;
+		padding: 0px 10px;
+		top: 16px;
+		left: 38%;
+		box-shadow: 0px 0px 2px 2px #FFBABA ;
+	}
+}
+.header .error i{
+	padding-right:10px ;
+	font-size: 15px;
 }
 .header-grid{
 	padding:2em 0;
