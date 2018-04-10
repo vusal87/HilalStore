@@ -42,10 +42,10 @@
             <div class="headerBashlig row">
 
                     <h2 class="animated wow zoomIn coxSatilanlar" data-wow-delay=".5s">Çox Satilanlar</h2>
+                <hr>
 
             </div>
 
-            <hr>
             <div class="new-collections-grids">
                         <div class="row">
                             @foreach( $mehsullar_cox_satan as $mehsul)

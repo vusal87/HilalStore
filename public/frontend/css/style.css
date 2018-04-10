@@ -1003,7 +1003,7 @@ position: relative;
 	/*margin:1em 0 0;*/
 }
 .new-collections-grid1{
-	margin-left: 10px;
+	margin-left: 42px;
 	margin-right: 10px;
     position: relative;
 	box-shadow: 2px 2px 2px 2px #7b7575;
@@ -1179,6 +1179,13 @@ position: relative;
 	position:relative;
 	padding-bottom:.5em;
 }
+.footer-grid hr{
+	border: 0;
+	height: 2px;
+	 width: 100%;
+	background-color: #E6AB0F;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+ }
 
 .footer-grid p{
 	font-size:14px;
@@ -4170,6 +4177,7 @@ width: 600px;
 hr {
 	border : 0;
 	height: 2px;
+	width: 88vh;
 	background-color: #E6AB0F;
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
