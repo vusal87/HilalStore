@@ -12,7 +12,7 @@ class AnasehifeController extends Controller
 {
     public function index()
     {
-        $kateqoriler=Kateqori::whereRaw('ust_id is null')->take(8)->get();//all();->take(2);
+        $kateqoriler=Kateqori::whereRaw('ust_id is null')->take(16)->get();//all();->take(2);
 
 //        MehsulDetay::where('goster_slider',1)->take(7)->get();
         $mehsullar_slider= mehsul::select('mehsul.*')
