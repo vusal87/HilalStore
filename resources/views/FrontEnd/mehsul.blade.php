@@ -102,7 +102,7 @@
                             <div id="productTabContent" class="tab-content">
                                 <div class="tab-pane fade in active" id="product_tabs_description">
                                     <div class="std">
-                                      <p class="text-left"> {{$mehsul->aciqlama}} Lorem ipsum dolor sit amet.</p>
+                                      <p class="text-left"> {{$mehsul->aciqlama}}</p>
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="product_tabs_tags">
