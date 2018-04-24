@@ -120,7 +120,7 @@ class MehsulController extends Controller
     {
 
         $mehsul=mehsul::find($id);
-        $mehsul->kateqoriler()->detach();
+//        $mehsul->kateqoriler()->detach();
 //        $mehsul->detay()->delete();
         $mehsul->delete();
         return redirect()

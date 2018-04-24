@@ -274,6 +274,12 @@
 	/*transition: 0.03s ease all;*/
 
 }
+@media only screen and (min-width: 1500px) {
+	.wsmain .wsmenu-list{
+     padding-left: 33.33%;
+	}
+}
+
 .wsmainscroll{
 	transition: 0.3s ease all;
 	background-color: #99895C;

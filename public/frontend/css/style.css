@@ -4207,6 +4207,11 @@ hr {
 #elaqe{
 	margin-top: 40px;
 }
+.section-body .section-subtitle{
+	/*font-size: 21px;*/
+	padding-left: 20px;
+
+}
 .rem1 .rem input{
 	width: 99px;
 	height: 28px;

@@ -7,62 +7,66 @@
                                          {{csrf_field()}}
             <div class="section-inner col-md-12">
                 <div class="section-body">
-                    <div class="account-form">
-                        <div class="section-subtitle" id="shipping-address">Gonderilecek Adress</div>
-                        <div class="row">
-                            <div class="col-md-5 col-md-offset-4">
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="form-group">
-                                            <label>Ad Soyad<span class="required"></span></label>
-                                            <input type="text" name="adSoyad" class="form-control" value="{{auth()->user()->adSoyad}}">
-                                        </div> <!-- /.form-group -->
-                                    </div> <!-- /.col-md-6 -->
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="account-form">
 
-                                </div> <!-- /.row -->
-                                <div class="form-group">
-                                    <label>Ünvan<span class="required"></span></label>
-                                    <input type="text" name="adres" class="form-control" value="{{$istifadeci_melumat->adres}}">
-                                </div> <!-- /.form-group -->
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>Şəhər <span class="required"></span></label>
-                                            <select class="form-control" name="country" value="{{$istifadeci_melumat->adres}}">
-                                                <optgroup label="Country" >
-                                                    <option>Baki</option>
-                                                    <option>Bileceri</option>
-                                                    <option>Xirdalan</option>
-                                                    <option>Saray</option>
-                                                    <option>Sumqayit</option>
-                                                </optgroup>
-                                            </select> <!-- /.form-control -->
-                                        </div> <!-- /.form-group -->
-                                    </div> <!-- /.col-md-6 -->
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>Inzibati Rayon <span class="required"></span></label>
-                                            <input type="text" name="city" class="form-control">
-                                        </div> <!-- /.form-group -->
-                                    </div> <!-- /.col-md-6 -->
-                                </div> <!-- /.row -->
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>Şəhər Nomrə<span class="required"></span></label>
-                                            <input type="text" name="ev_telefon" class="form-control phone" value="{{$istifadeci_melumat->ev_telefon}}">
-                                        </div> <!-- /.form-group -->
-                                    </div> <!-- /.col-md-6 -->
-                                    <div class="col-md-6 col-sm-6">
-                                        <div class="form-group">
-                                            <label>Mobil Nomrə<span class="required"></span></label>
-                                            <input type="text" name="el_telefon" class="form-control phone" value="{{$istifadeci_melumat->el_telefon}}">
-                                        </div> <!-- /.form-group -->
-                                    </div> <!-- /.col-md-6 -->
-                                </div> <!-- /.row -->
-                            </div> <!-- /.col-md-12 -->
-                        </div> <!-- /.row -->
-                    </div> <!-- /.account-form -->
+                            <div class="section-subtitle" id="shipping-address"><h1 class="text-center">Gönderilecek Adres</h1></div>
+                            <div class="row">
+                                <div class="col-md-5 col-md-offset-4">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label>Ad Soyad<span class="required"></span></label>
+                                                <input type="text" name="adSoyad" class="form-control" value="{{auth()->user()->adSoyad}}">
+                                            </div> <!-- /.form-group -->
+                                        </div> <!-- /.col-md-6 -->
+
+                                    </div> <!-- /.row -->
+                                    <div class="form-group">
+                                        <label>Ünvan<span class="required"></span></label>
+                                        <input type="text" name="adres" class="form-control" value="{{$istifadeci_melumat->adres}}">
+                                    </div> <!-- /.form-group -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Şəhər <span class="required"></span></label>
+                                                <select class="form-control" name="country" value="{{$istifadeci_melumat->adres}}">
+                                                    <optgroup label="Country" >
+                                                        <option>Baki</option>
+                                                        <option>Bileceri</option>
+                                                        <option>Xirdalan</option>
+                                                        <option>Saray</option>
+                                                        <option>Sumqayit</option>
+                                                    </optgroup>
+                                                </select> <!-- /.form-control -->
+                                            </div> <!-- /.form-group -->
+                                        </div> <!-- /.col-md-6 -->
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Inzibati Rayon <span class="required"></span></label>
+                                                <input type="text" name="city" class="form-control">
+                                            </div> <!-- /.form-group -->
+                                        </div> <!-- /.col-md-6 -->
+                                    </div> <!-- /.row -->
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Şəhər Nomrə<span class="required"></span></label>
+                                                <input type="text" name="ev_telefon" class="form-control phone" value="{{$istifadeci_melumat->ev_telefon}}">
+                                            </div> <!-- /.form-group -->
+                                        </div> <!-- /.col-md-6 -->
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Mobil Nomrə<span class="required"></span></label>
+                                                <input type="text" name="el_telefon" class="form-control phone" value="{{$istifadeci_melumat->el_telefon}}">
+                                            </div> <!-- /.form-group -->
+                                        </div> <!-- /.col-md-6 -->
+                                    </div> <!-- /.row -->
+                                </div> <!-- /.col-md-12 -->
+                            </div> <!-- /.row -->
+                        </div> <!-- /.account-form -->
+
+                    </div>
                 </div> <!-- /.section-body -->
 
             </div> <!-- /.section-inner -->

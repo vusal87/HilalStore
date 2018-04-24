@@ -9,7 +9,7 @@ class Kateqori extends Model
 {
 //    use SoftDeletes;
     protected $table ='kateqori';
-//    protected $fillable =['kateqori_adi','slug'];
+    protected $fillable =['kateqori_adi','slug'];
     protected $guarded=[];
 
 
