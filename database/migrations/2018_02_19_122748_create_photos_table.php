@@ -19,6 +19,9 @@ class CreatePhotosTable extends Migration
             $table->foreign('mehsul_id')->references('id')->on('mehsul');
             $table->string('img_name');
             $table->timestamps();
+
+            $table->foreign('mehsul_id')->references('id')->on('mehsul')->onDelete('cascade');
+
         });
     }
 
