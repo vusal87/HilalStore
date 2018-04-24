@@ -3,12 +3,15 @@
         <div class="footer-grids">
             <div class="row">
 
-            <div class="col-md-3  col-xs-12 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+            <div class="col-md-5  col-xs-12 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
                 <h3>Haqqimizda</h3>
                 <hr>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+                <p class="text-left">
+                    1992-ci ildə fəaliyyətə başlamış HilalStore Mağazasi santexnik mehsullarin satışı, quraşdırılması və texniki xidməti ilə ixtisaslaşaraq bu günə qədər fəaliyyətini davam etdirməkdədir.
+                </p>
+                <p class="text-left">Mağazamıza müraciət edən hər bir müştəri bizim üçün dəyərlidir. Hər zaman müştəri istəklərinə uyğun xidmət göstərilməsi əsas məqsədlərimizdən biridir.Peşəkar xidmət göstərən HilalStore kollektivi hər zaman müştərilərinin etimadını doğrultmaq üçün çalışır.</p>
             </div>
-            <div class="col-md-3 col-md-offset-6  col-xs-12 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
+            <div class="col-md-3 col-md-offset-4  col-xs-12 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
                 <h3>Bizimle Elaqe</h3>
                 <hr>
                 <ul>
